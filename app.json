@@ -1,5 +1,6 @@
 {
   "expo": {
+    "main":"./src/index.js",
     "name": "Expo App",
     "slug": "Expo App",
     "version": "1.0.0",
