@@ -1,8 +1,7 @@
 {
   "expo": {
-    "main":"./src/index.js",
-    "name": "Expo App",
-    "slug": "Expo App",
+    "name": "ExpoApp",
+    "slug": "ExpoApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/Assets/Images/icon.png",
@@ -19,6 +18,12 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/Assets/Images/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     },
     "web": {
       "favicon": "./src/Assets/Images/favicon.png"
