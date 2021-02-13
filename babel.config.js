@@ -8,7 +8,6 @@ module.exports=function(api){
                 alias:{
                     "components":"./src/Components",
                     "assets":"./src/Assets",
-                    "afile":"",
                 },
             }],
         ],
