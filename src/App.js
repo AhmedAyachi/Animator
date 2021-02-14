@@ -5,7 +5,7 @@ import css from "./App.style";
 
 export default function App(){
     return (
-        <View style={css.container}>
+        <View style={css.app}>
             <Text>App created with create-expo-app command</Text>
             <StatusBar style="auto"/>
         </View>
