@@ -6,6 +6,7 @@ module.exports=function(api) {
             ["module-resolver",{
                 alias:{
                     "assets":"./src/Assets",
+                    "routes":"./src/Routes",
                     "components":"./src/Components",
                     "afile":"./src/ANativeFile.js",
                 }
