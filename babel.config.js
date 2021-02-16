@@ -5,6 +5,7 @@ module.exports=function(api) {
         plugins:[
             ["module-resolver",{
                 alias:{
+                    "estate":"./src/Estate",
                     "assets":"./src/Assets",
                     "routes":"./src/Routes",
                     "components":"./src/Components",
