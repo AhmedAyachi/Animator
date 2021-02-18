@@ -5,9 +5,11 @@ module.exports=function(api) {
         plugins:[
             ["module-resolver",{
                 alias:{
-                    "estate":"./src/Estate",
+                    "react-native-router":"./React-native-router",
+                    "actions":"./src/Store/Actions",
                     "assets":"./src/Assets",
                     "routes":"./src/Routes",
+                    "estate":"./src/Estate",
                     "components":"./src/Components",
                     "afile":"./src/ANativeFile.js",
                 }
