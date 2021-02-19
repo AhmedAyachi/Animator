@@ -5,7 +5,7 @@ import css from "./App.style";
 
 export default function App(){
     return (
-        <ScrollView style={css.app}>
+        <ScrollView contentContainerStyle={css.app}>
             <Text>App created with create-expo-app command</Text>
             <StatusBar style="auto"/>
         </ScrollView>
