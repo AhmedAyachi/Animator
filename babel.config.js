@@ -10,8 +10,9 @@ module.exports=function(api) {
                     "assets":"./src/Assets",
                     "routes":"./src/Routes",
                     "estate":"./src/Estate",
-                    "components":"./src/Components",
+                    "css":"./src/index.style.js",
                     "afile":"./src/ANativeFile.js",
+                    "components":"./src/Components",
                 }
             }],
         ],
