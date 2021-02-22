@@ -8,10 +8,14 @@ export const useDrag=()=>{
         toValue:{x:0,y:0},
         useNativeDriver:false,
         bounciness:10,
+        useNativeDriver:true,
     });
     const panResponder=useRef(PanResponder.create({
         onMoveShouldSetPanResponder:()=>true,
-        onPanResponderMove:Animated.event([null,{dx:coords.x,dy:coords.y}],{useNativeDriver:false}),
+        onPanResponderMove:(event,touch)=>{
+            const {dx,dy}=touch;
+            coords.setValue({x:dx,y:dy});
+        },//Animated.event([null,{dx:coords.x,dy:coords.y}],{useNativeDriver:false}),
         onPanResponderRelease:()=>{
             backToOrigin.start();
         },
