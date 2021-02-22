@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoApp",
-    "slug": "ExpoApp",
+    "name": "Animator",
+    "slug": "Animator",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/Assets/Images/icon.png",

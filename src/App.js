@@ -1,14 +1,27 @@
 import React from "react";
-import {Text,ScrollView} from "react-native";
+import {ScrollView} from "react-native";
 import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
+import {Route} from "react-router-native";
+import {Header} from "components";
+import {Animation0,Animation1,Animation2} from "routes";
+import {useKey} from "afile";
 
 
 export default function App(){
     return (
         <ScrollView contentContainerStyle={css.app}>
-            <Text>App created with create-expo-app command</Text>
             <StatusBar style="auto"/>
+            <Header paths={routes.map((route,i)=>`/${i||""}`)}/>
+            {routes.map((Component,i)=>
+                <Route 
+                    key={useKey("route")}
+                    exact path={`/${i||""}`} 
+                    render={()=><Component style={{flex:1}}/>}
+                />
+            )}
         </ScrollView>
     );
 }
+
+const routes=[Animation0,Animation1,Animation2];

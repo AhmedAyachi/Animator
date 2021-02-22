@@ -1,32 +1,67 @@
-export const border=(width=2,style="solid",color="black")=>({borderWidth:width,borderStyle:style,borderColor:color});
-export const rotate=(x="0deg",y="0deg",z="0deg")=>[{rotateX:x},{rotateY:y},{rotateZ:z}];
-export const skew=(x="0deg",y="0deg")=>[{skewX:x},{skewY:y}];
-export const padding=(input=null)=>{
-    const values=input&&(typeof(input)==="string")?input.trim().split(" ").map(value=>parseInt(value)):null;
-    const length=values?values.length:0;
-    switch(length){
-        case 0:
-            return {padding:0};
-        case 2:
-            return {paddingVertical:values[0],paddingHorizontal:values[1]};
-        case 4:
-            return {paddingTop:values[0],paddingRight:values[1],paddingBottom:values[2],paddingLeft:values[3]};
-        default:
-            return {padding:values[0]};
-    }
-}
-export const margin=(input=null)=>{
-    const values=input&&(typeof(input)==="string")?input.trim().split(" ").map(value=>parseInt(value)):null;
-    const length=values?values.length:0;
-    switch(length){
-        case 0:
-            return {margin:0};
-        case 2:
-            return {marginVertical:values[0],marginHorizontal:values[1]};
-        case 4:
-            return {marginTop:values[0],marginRight:values[1],marginBottom:values[2],marginLeft:values[3]};
-        default:
-            return {margin:values[0]};
-    }
-}
+import {useMemo} from "react";
+import {Animated} from "react-native";
+
+
+export const fadeIn=(opacity,duration=300)=>useMemo(()=>{
+    const animation=(()=>Animated.timing(opacity,{
+        toValue:1,duration,
+        useNativeDriver:true,
+    }))();
+    return {
+        stop:(callback)=>{opacity.stopAnimation(callback)},
+        reset:()=>{opacity.setValue(0)},
+        start:(ref,callback)=>{
+            opacity.setValue(0);
+            ref&&ref.setNativeProps({style:{display:"flex"}});
+            animation.start(callback);
+        },
+    };
+},[]);
+
+export const fadeOut=(opacity,duration=300)=>useMemo(()=>{
+    const animation=(()=>Animated.timing(opacity,{
+        toValue:0,duration,
+        useNativeDriver:true,
+    }))();
+    return {
+        stop:(callback)=>{opacity.stopAnimation(callback)},
+        reset:()=>{opacity.setopacity(0)},
+        start:(ref,callback)=>{
+            opacity.setValue(1);
+            animation.start(()=>{
+                ref&&ref.setNativeProps({style:{display:"none"}});
+                callback&&callback();
+            });
+        },
+    };
+},[]);
+
+export const rotateZ=(duration=1500)=>useMemo(()=>{
+    const value=new Animated.Value(0);
+    const animation=(()=>Animated.timing(value,{
+        toValue:2,
+        duration,
+        useNativeDriver:true,
+    }))();
+    return {
+        animation:{
+            stop:(callback)=>{value.stopAnimation(callback)},
+            reset:()=>{value.setValue(0)},
+            set:(frame)=>{value.setValue(frame)},
+            start:(ref,callback)=>{
+                ref&&ref.setNativeProps({
+                    style:{
+                        display:"flex", 
+                    },
+                });
+                value.setValue(0)
+                animation.start(callback);
+            },
+        },
+        value:value.interpolate({
+        inputRange:[0,1,2],
+        outputRange:["0deg","180deg","360deg"],
+    })};
+},[]);
+
 export const useKey=(startwith="")=>`${startwith}_${Math.random().toString(36).substring(2)}${Math.random().toString(36).substring(2)}`;

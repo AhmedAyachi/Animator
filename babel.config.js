@@ -5,7 +5,6 @@ module.exports=function(api) {
         plugins:[
             ["module-resolver",{
                 alias:{
-                    "react-native-router":"./React-native-router",
                     "actions":"./src/Store/Actions",
                     "assets":"./src/Assets",
                     "routes":"./src/Routes",
