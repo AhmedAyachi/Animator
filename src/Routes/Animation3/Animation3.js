@@ -14,7 +14,7 @@ export default function Animation3(props){
         animation3:useRef(),
     }
     return (
-        <Animated.View ref={refs.animation3} style={[css.animation3,props.style,styles.animation3(scrollx)]}>
+        <Animated.View ref={refs.animation3} style={[css.animation3,styles.animation3(scrollx)]}>
             <Badge  parentRef={refs.animation3} scrollx={scrollx}/>
             <Animated.FlatList horizontal
                 contentContainerStyle={css.list} 

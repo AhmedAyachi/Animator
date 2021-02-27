@@ -13,7 +13,7 @@ export default function Animation1({style}){
         square:useRef(),
     }
     return (
-        <View style={[css.animation1,style]}>
+        <View style={css.animation1}>
             <TWF onPress={()=>{
                    fadeInAnim.start(refs.square.current);
                 }}>

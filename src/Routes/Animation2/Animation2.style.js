@@ -4,6 +4,7 @@ import {rem,border} from "css";
 
 const css=StyleSheet.create({
     animation2:{
+        flex:1,
         backgroundColor:"#3dadeb",
         justifyContent:"center",
         alignItems:"center",

@@ -7,7 +7,7 @@ import * as H from "./Hooks";
 export default function Animation2({style}){
     const [coords,panResponder]=H.useDrag();
     return (
-        <View style={[css.animation2,style]}>
+        <View style={css.animation2}>
             <Animated.View style={[css.ball,coords.getTranslateTransform()]} {...panResponder.panHandlers}>
                 <Text style={css.ballmsg}>Drag Me</Text>
             </Animated.View>

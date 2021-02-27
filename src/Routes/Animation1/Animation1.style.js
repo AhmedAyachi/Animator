@@ -4,6 +4,7 @@ import {rem} from "css";
 
 const css=StyleSheet.create({
     animation1:{
+        flex:1,
         justifyContent:"center",
         alignItems:"center",
         backgroundColor:"#ff8c00",

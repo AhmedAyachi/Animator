@@ -15,9 +15,9 @@ export default function Badge(props){
         });
     },[]);
    
-    return parentwidth?
-        <Animated.View ref={refs.badge} style={[css.badge,styles.badge(scrollx,parentwidth)]}/>:
-        <></>
+    return <>
+        {parentwidth&&<Animated.View ref={refs.badge} style={[css.badge,styles.badge(scrollx,parentwidth)]}/>}
+    </>
 }
 
 const styles={

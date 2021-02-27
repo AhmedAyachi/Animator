@@ -6,7 +6,7 @@ import {} from "afile";
 
 const css={...StyleSheet.create({
     animation0:{
-        
+        flex:1,
     },
     homebutton:(animationvalue)=>({
         width:"100%",
@@ -24,7 +24,7 @@ const css={...StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius:50,
-        marginBottom:"40%",
+        marginBottom:"25%",
         backgroundColor:animationvalue.interpolate({
             inputRange:[0,0.499,0.5,1],
             outputRange:["#0f0f0f","#0f0f0f","gold","gold",],
