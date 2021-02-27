@@ -7,7 +7,7 @@ const css=StyleSheet.create({
         position:"absolute",
         top:"-20%",
         left:"1%",
-        opacity:0.65,
+        opacity:0.3,
         width:"120%",
         height:45*rem,
         borderRadius:80,

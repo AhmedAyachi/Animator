@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import {View,Animated} from "react-native";
 import css from "./Animation3.style";
 import {bird0,bottle0,controller0,energy0} from "assets";
@@ -10,9 +10,12 @@ import {width} from "css";
 export default function Animation3(props){
     const {}=props;
     const [scrollx,onScroll]=H.useScroll();
+    const refs={
+        animation3:useRef(),
+    }
     return (
-        <Animated.View style={[css.animation3,props.style,styles.animation3(scrollx)]}>
-            <Badge scrollx={scrollx}/>
+        <Animated.View ref={refs.animation3} style={[css.animation3,props.style,styles.animation3(scrollx)]}>
+            <Badge  parentRef={refs.animation3} scrollx={scrollx}/>
             <Animated.FlatList horizontal
                 contentContainerStyle={css.list} 
                 scrollEventThrottle={100}
