@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView} from "react-native";
+import {View} from "react-native";
 import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
 import {Route} from "react-router-native";
@@ -10,17 +10,17 @@ import {useKey} from "afile";
 
 export default function App(){
     return (
-        <ScrollView contentContainerStyle={css.app}>
-            <StatusBar style="auto"/>
+        <View style={css.app}>
+            <StatusBar style="inverted"/>
             <Header paths={routes.map((route,i)=>`/${i||""}`)}/>
             {routes.map((Component,i)=>
                 <Route 
                     key={useKey("route")}
                     exact path={`/${i||""}`} 
-                    render={()=><Component/>}
+                    component={Component}
                 />
             )}
-        </ScrollView>
+        </View>
     );
 }
 

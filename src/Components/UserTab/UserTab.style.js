@@ -5,50 +5,47 @@ import {rem,border} from "css";
 const css=StyleSheet.create({
     usertab:{
         width:"90%",
-        //maxHeight:10*rem,
         flexDirection:"row",
         justifyContent:"space-between",
         alignSelf:"center",
         marginVertical:10,
         backgroundColor:"#f9f9f9",
         borderRadius:10,
-        //...border(2,"solid","black"),
     },
     col0:{
         flex:1,
         padding:1*rem,
-        //justifyContent:"flex-start",
         alignItems:"center",
-        //backgroundColor:"khaki",
         overflow:"hidden",
     },
     col1:{
         flex:2,
         paddingVertical:1*rem,
         justifyContent:"center",
-        //backgroundColor:"dodgerblue",
     },
     userimage:{
-        maxWidth:"90%",
+        maxWidth:8*rem,
         height:8*rem,
-        resizeMode:"contain",
-        borderRadius:200,
+        borderRadius:50,
         overflow:"hidden",
     },
     username:{
-        fontSize:2.25*rem,
+        fontSize:2*rem,
+        fontWeight:"bold",
         textTransform:"capitalize",
     },
     userjob:{
-        fontSize:1.25*rem,
-        letterSpacing:2,
+        fontSize:1.1*rem,
+        fontWeight:"700",
+        letterSpacing:1,
         color:"gray",
+        
     },
     useremail:{
         fontSize:1.1*rem,
-        flexWrap:"nowrap",
-        letterSpacing:0.5,
-        color:"gray",
+        fontWeight:"200",
+        textTransform:"capitalize",
+        color:"#ff9e9e",
     },
 });
 
