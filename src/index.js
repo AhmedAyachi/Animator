@@ -6,14 +6,18 @@ import {Provider} from "react-redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import Reducer from "./Store";
 import App from "./App";
+import {useCustomFonts} from "./index.style";
 
 
 const store=createStore(Reducer,composeWithDevTools());
 
-registerRootComponent(()=>(
-    <Provider store={store}>
-        <NativeRouter>
-            <App/>
-        </NativeRouter>
-    </Provider>
-));
+registerRootComponent(()=>{
+    const fontsloaded=useCustomFonts();
+    return (fontsloaded&&
+        <Provider store={store}>
+            <NativeRouter>
+                <App/>
+            </NativeRouter>
+        </Provider>
+    )
+});

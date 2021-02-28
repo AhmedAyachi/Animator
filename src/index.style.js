@@ -1,6 +1,15 @@
 import {Animated} from "react-native";
 import {Dimensions} from "react-native";
+import {useFonts} from "expo-font";
+import {princesssofia} from "assets";
 
+
+export const useCustomFonts=()=>{
+    const [loaded]=useFonts({
+        princesssofia,
+    });
+    return loaded;
+}
 
 export const {height,width}=Dimensions.get("screen");
 export const vw=width*0.01;
