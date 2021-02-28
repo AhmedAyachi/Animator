@@ -17,7 +17,6 @@ const css=StyleSheet.create({
         width:"100%",
         minHeight:"100%",
         alignItems:"center",
-        //...border(2,"solid","red"),
     },
 });
 

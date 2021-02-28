@@ -1,5 +1,5 @@
 import React,{useRef} from "react";
-import {View,Text,Animated,ScrollView} from "react-native";
+import {View,Animated} from "react-native";
 import css from "./Animation4.style";
 import {UserTab} from "components";
 import {profile0,profile1,profile2,profile3} from "assets";
@@ -16,13 +16,6 @@ export default function Animation4(props){
     return (
         <View style={css.animation4}>
             <LinearGradient style={css.background} colors={["#dfdfdf","#ff599c"]} locations={[0,1]}/>
-            {/*<Animated.ScrollView ref={refs.usertablist}
-                onScroll={Animated.event([{nativeEvent:{contentOffset:{y:scrollY}}}],{useNativeDriver:false})}
-            >
-                {users.concat([...users,...users]).map(user=>
-                    <UserTab key={useKey("usertab")} containerRef={refs.usertablist} scrollY={scrollY} user={user}/>
-                )}
-            </Animated.ScrollView>*/}
             {<Animated.FlatList
                 nestedScrollEnabled={false}
                 ref={refs.usertablist}
