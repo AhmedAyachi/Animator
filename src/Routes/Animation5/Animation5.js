@@ -1,5 +1,5 @@
 import React,{useRef,useEffect,useState} from "react";
-import {View,Animated,findNodeHandle} from "react-native";
+import {View,Animated,ImageBackground} from "react-native";
 import css from "./Animation5.style";
 import {IlluCard} from "components";
 import {alchemist0,hairy0,leodark0,nowel0,privor0,samji0,Toyzy0} from "assets";
@@ -7,25 +7,36 @@ import {useKey} from "afile";
 
 
 export default function Animation5(props){
-    const {}=props;
     const scrollX=useRef(new Animated.Value(0)).current;
-    const [opacities,setOpacities]=useState(new Array(illucards.length).fill(1));
+    const [width,setWidth]=useState(null);
+    const refs={
+        animation5:useRef(),
+    }
+    useEffect(()=>{
+        let mounted=true;
+        refs.animation5.current.measure((x,y,width,height)=>{
+            mounted&&setWidth(width);
+        });
+        return ()=>{
+            mounted=false;
+        }
+    },[]);
     return (
-        <View style={css.animation5}>
-            {[...illucards].reverse().map((illucard,i)=>
+        <View ref={refs.animation5} style={css.animation5}>
+            <ImageBackground
+                style={css.background}
+                source={illucards[0].image}
+                blurRadius={20}
+            />
+            {illucards.map((illucard,i)=>
                 <Animated.Image 
                     key={useKey("illucard")}
-                    style={[css.background,{opacity:opacities[i]}]} 
+                    style={[css.background,{opacity:scrollX.interpolate({
+                        inputRange:[(i-1)*width,i*width,(i+1)*width],
+                        outputRange:[0,1,0],
+                    })}]} 
                     source={illucard.image} 
-                    blurRadius={20} 
-                    onLayout={(event=>{
-                        const {width}=event.nativeEvent.layout;
-                        opacities[i]=scrollX.interpolate({
-                            inputRange:[0,i*width],
-                            outputRange:[1,0],
-                        });
-                        setOpacities([...opacities]);
-                    })}
+                    blurRadius={20}
                 />
             )}
             <Animated.FlatList

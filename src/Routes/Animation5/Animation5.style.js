@@ -5,7 +5,7 @@ import {rem,border} from "css";
 const css=StyleSheet.create({
     animation5:{
         flex:1,
-        backgroundColor:"khaki",
+        backgroundColor:"white",
     },
     background:{
         position:"absolute",
@@ -14,9 +14,11 @@ const css=StyleSheet.create({
         top:0,bottom:0,left:0,right:0,
     },
     cardlist:{
+        position:"absolute",
         minWidth:"100%",
         height:"100%",
-        zIndex:5,
+        zIndex:100,
+        elevation:0,
     },
 });
 
