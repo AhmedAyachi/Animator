@@ -3,7 +3,7 @@ import {rem,vw} from "css";
 
 
 const css=StyleSheet.create({
-    illucard:{
+    illuview:{
         width:100*vw,
         height:"100%",
         justifyContent:"center",

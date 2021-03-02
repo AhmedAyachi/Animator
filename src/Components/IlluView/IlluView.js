@@ -1,12 +1,12 @@
 import React from "react";
 import {View,Text,Image} from "react-native";
-import css from "./IlluCard.style";
+import css from "./IlluView.style";
 
 
-export default function IlluCard(props){
+export default function IlluView(props){
     const {card:{title,image}}=props;
     return (
-        <View style={css.illucard}>
+        <View style={css.illuview}>
             <Text style={css.title}>{title}</Text>
             <View style={css.postercontainer}>
                 <Image style={css.poster} source={image}/>
