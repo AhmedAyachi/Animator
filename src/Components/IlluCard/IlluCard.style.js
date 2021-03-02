@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,vw} from "css";
+import {rem,vw} from "css";
 
 
 const css=StyleSheet.create({
@@ -8,7 +8,6 @@ const css=StyleSheet.create({
         height:"100%",
         justifyContent:"center",
         alignItems:"center",
-        zIndex:10,
     },
     title:{
         width:"100%",

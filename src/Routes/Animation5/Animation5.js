@@ -27,16 +27,16 @@ export default function Animation5(props){
                         outputRange:[0,1,0],
                     })}]} 
                     source={illucard.image} 
-                    blurRadius={20}
+                    blurRadius={50}
                 />):
                 <ImageBackground
                     style={css.background}
                     source={illucards[0].image}
-                    blurRadius={20}
+                    blurRadius={50}
                 />
             }
             <Animated.FlatList
-            horizontal pagingEnabled 
+            horizontal pagingEnabled showsHorizontalScrollIndicator={false}
             onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:true})}
             contentContainerStyle={css.cardlist}
                 keyExtractor={()=>useKey("illucard")}
