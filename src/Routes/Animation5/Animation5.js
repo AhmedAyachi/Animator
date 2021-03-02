@@ -13,22 +13,13 @@ export default function Animation5(props){
         animation5:useRef(),
     }
     useEffect(()=>{
-        let mounted=true;
         refs.animation5.current.measure((x,y,width,height)=>{
-            mounted&&setWidth(width);
+            setWidth(width);
         });
-        return ()=>{
-            mounted=false;
-        }
     },[]);
     return (
         <View ref={refs.animation5} style={css.animation5}>
-            <ImageBackground
-                style={css.background}
-                source={illucards[0].image}
-                blurRadius={20}
-            />
-            {illucards.map((illucard,i)=>
+            {width?illucards.map((illucard,i)=>
                 <Animated.Image 
                     key={useKey("illucard")}
                     style={[css.background,{opacity:scrollX.interpolate({
@@ -37,8 +28,13 @@ export default function Animation5(props){
                     })}]} 
                     source={illucard.image} 
                     blurRadius={20}
+                />):
+                <ImageBackground
+                    style={css.background}
+                    source={illucards[0].image}
+                    blurRadius={20}
                 />
-            )}
+            }
             <Animated.FlatList
             horizontal pagingEnabled 
             onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:true})}

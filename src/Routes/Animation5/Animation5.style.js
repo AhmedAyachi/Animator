@@ -5,7 +5,7 @@ import {rem,border} from "css";
 const css=StyleSheet.create({
     animation5:{
         flex:1,
-        backgroundColor:"white",
+        backgroundColor:"black",
     },
     background:{
         position:"absolute",
