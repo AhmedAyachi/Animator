@@ -8,7 +8,7 @@ const css=StyleSheet.create({
     square:{
         width:10*rem,
         height:10*rem,
-        backgroundColor:"red",
+        backgroundColor:"white",
         borderRadius:10,
     },
     row0:{
@@ -19,9 +19,9 @@ const css=StyleSheet.create({
     },
     title:{
         textAlign:"center",
-        fontSize:1.5*rem,
+        fontSize:1*rem,
         fontWeight:"bold",
-        color:"white",
+        color:"black",
     },
 });
 

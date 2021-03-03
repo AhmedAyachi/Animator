@@ -4,7 +4,7 @@ import css from "./IlluView.style";
 
 
 export default function IlluView(props){
-    const {card:{title,image}}=props;
+    const {illustration:{title,image}}=props;
     return (
         <View style={css.illuview}>
             <Text style={css.title}>{title}</Text>

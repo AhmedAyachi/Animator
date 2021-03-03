@@ -13,7 +13,7 @@ const css=StyleSheet.create({
         height:"100%",
         ...inset(0),
     },
-    cardlist:{
+    viewslist:{
         minWidth:"100%",
         height:"100%",
     },

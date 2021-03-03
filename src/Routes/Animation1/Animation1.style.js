@@ -7,7 +7,7 @@ const css=StyleSheet.create({
         flex:1,
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"#ff8c00",
+        backgroundColor:"#dc143c",
     },
     title:{
         color:"black",

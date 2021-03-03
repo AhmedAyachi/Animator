@@ -38,10 +38,10 @@ export default function Animation5(){
             <Animated.FlatList
             horizontal pagingEnabled showsHorizontalScrollIndicator={false}
             onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:true})}
-            contentContainerStyle={css.cardlist}
+            contentContainerStyle={css.viewslist}
                 keyExtractor={()=>useKey("illuview")}
                 data={illuviews}
-                renderItem={({item})=><IlluView scrollX={scrollX} card={item}/>}
+                renderItem={({item})=><IlluView scrollX={scrollX} illustration={item}/>}
             />
         </View>
     )
