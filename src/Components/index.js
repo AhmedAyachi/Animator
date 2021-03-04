@@ -10,3 +10,4 @@ export {default as IlluView} from "./IlluView/IlluView";
 export {default as IlluCard} from "./IlluCard/IlluCard";
 export {default as IlluBackdrop} from "./IlluBackdrop/IlluBackdrop";
 export {default as Player} from "./Player/Player";
+export {default as MotionBar} from "./MotionBar/MotionBar";

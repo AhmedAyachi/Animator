@@ -18,6 +18,8 @@ export {default as privor0} from "./Images/Privor_0.png";
 export {default as samji0} from "./Images/Samji_0.png";
 export {default as Toyzy0} from "./Images/Toyzy_0.png";
 export {default as music1} from "./Images/Music_1.png";
+export {default as play1} from "./Images/Play_1.png";
+export {default as arrow2} from "./Images/Arrow_2.png";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";
