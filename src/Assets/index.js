@@ -17,6 +17,7 @@ export {default as nowel0} from "./Images/Nowel_0.png";
 export {default as privor0} from "./Images/Privor_0.png";
 export {default as samji0} from "./Images/Samji_0.png";
 export {default as Toyzy0} from "./Images/Toyzy_0.png";
+export {default as music1} from "./Images/Music_1.png";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";

@@ -4,7 +4,7 @@ import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
 import {Route} from "react-router-native";
 import {Header} from "components";
-import {Animation0,Animation1,Animation2,Animation3,Animation4,Animation5,Animation6} from "routes";
+import {Animation0,Animation1,Animation2,Animation3,Animation4,Animation5,Animation6,Animation7} from "routes";
 import {useKey} from "afile";
 
 
@@ -26,5 +26,5 @@ export default function App(){
 
 const routes=[
     Animation0,Animation1,Animation2,Animation3,Animation4,
-    Animation5,Animation6,
+    Animation5,Animation6,Animation7,
 ];
