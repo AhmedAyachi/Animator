@@ -61,7 +61,7 @@ const styles={
 
 const sharedState=new function(){
     this.illucardwidth=css.illucard.width;
-    this.illucardoffsetwidth=(this.illucardwidth+css.illucard.marginHorizontal*2)-0.25;
+    this.illucardoffsetwidth=(this.illucardwidth+css.illucard.marginHorizontal*2)-0.07*vw;
     this.spacerwidth=(100*vw-this.illucardoffsetwidth)/2;
     return this;
 };

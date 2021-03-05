@@ -20,7 +20,7 @@ const css=StyleSheet.create({
         alignItems:"center",
         //...border(2,"solid","#ff3d0d"),
     },
-    motion:{
+    /*motion:{
         width:"100%",
         height:10*rem,
         flexDirection:"row",
@@ -33,7 +33,7 @@ const css=StyleSheet.create({
         height:"100%",
         marginHorizontal:1,
         backgroundColor:"#ff3d0d",
-    },
+    },*/
     btns:{
         width:"100%",
         flexDirection:"row",
