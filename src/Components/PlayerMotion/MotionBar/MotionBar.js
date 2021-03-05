@@ -4,11 +4,11 @@ import css from "./MotionBar.style";
 import * as H from "./Hooks";
 
 
-export default function MotionBar(props){
+export default function MotionBar({style}){
     const [scaleY,animation]=H.useScaleAnim();
     animation.start();
     return (
-        <Animated.View style={[css.motionbar,{transform:[{scaleY}]}]}>
+        <Animated.View style={[css.motionbar,style,{transform:[{scaleY}]}]}>
 
         </Animated.View>
     )

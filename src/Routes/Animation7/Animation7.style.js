@@ -20,20 +20,6 @@ const css=StyleSheet.create({
         alignItems:"center",
         //...border(2,"solid","#ff3d0d"),
     },
-    /*motion:{
-        width:"100%",
-        height:10*rem,
-        flexDirection:"row",
-        justifyContent:"center",
-        alignItems:"center",
-        //...border(2,"solid","#ff3d0d"),
-    },
-    motionbar:{
-        width:1*rem,
-        height:"100%",
-        marginHorizontal:1,
-        backgroundColor:"#ff3d0d",
-    },*/
     btns:{
         width:"100%",
         flexDirection:"row",

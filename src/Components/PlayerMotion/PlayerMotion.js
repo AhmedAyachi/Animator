@@ -21,7 +21,7 @@ PlayerMotion.defaultProps={
 const getMotionBars=(length=20)=>{
     const bars=[];
     for(let i=0;i<length;i++){
-        bars.push(<MotionBar key={useKey("motionbar")}/>)
+        bars.push(<MotionBar key={useKey("motionbar")} style={{width:`${70/length}%`}}/>)
     }
     return bars;
 }

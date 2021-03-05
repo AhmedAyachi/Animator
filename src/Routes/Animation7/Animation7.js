@@ -13,7 +13,7 @@ export default function Animation7(){
                 <Player/>
             </View>
             <View style={css.row1}>
-                <PlayerMotion/>
+                <PlayerMotion length={30}/>
                 <View style={css.btns}>
                     <TO><Image style={css.directionbtn} source={arrow2}/></TO>
                     <TO><Image style={css.playbtn} source={play1}/></TO>
