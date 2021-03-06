@@ -1,14 +1,19 @@
 import {useState,useRef,useEffect} from "react";
 import {Animated,Easing} from "react-native";
+import {useSelector} from "react-redux";
 
 
 export const useProgressBar=(duration,containerRef)=>{
     const [_,render]=useState(false);
+    const playing=useSelector(store=>store.animation7.playing);
     const state=useRef({
         progress:new Animated.Value(0),
         timebarwidth:null,
         animation:null,
     }).current;
+    if(state.animation){
+        playing?state.animation.start():state.animation.stop();
+    }
     useEffect(()=>{
         containerRef.current.measure((x,y,width)=>{
             state.animation=Animated.timing(state.progress,{
@@ -17,10 +22,10 @@ export const useProgressBar=(duration,containerRef)=>{
                 duration:duration*1000,
                 useNativeDriver:false,
             });
-            state.animation.start();
+            playing&&state.animation.start();
             state.timebarwidth=width;
             render(!_);
         });
     },[]);
-    return [state.progress,state.timebarwidth,state.animation];
+    return [state.progress,state.timebarwidth];
 };
