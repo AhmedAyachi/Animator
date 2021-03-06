@@ -5,8 +5,7 @@ import * as H from "./Hooks";
 
 
 export default function MotionBar({style}){
-    const [scaleY,animation]=H.useScaleAnim();
-    animation.start();
+    const [scaleY]=H.useScaleAnim();
     return (
         <Animated.View style={[css.motionbar,style,{transform:[{scaleY}]}]}>
 

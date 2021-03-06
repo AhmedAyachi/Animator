@@ -4,17 +4,17 @@ import {rem,border} from "css";
 
 const css=StyleSheet.create({
     player:{
-        width:20*rem,
-        height:20*rem,
+        width:5*rem,
+        height:5*rem,
         borderRadius:40*rem,
         marginVertical:15,
         justifyContent:"center",
         alignItems:"center",
-        ...border(2,"solid","#ff3d0d"),
-        overflow:"hidden",
+        //...border(2,"solid","#ff3d0d"),
+        overflow:"visible",
     },
     icon:{
-        maxWidth:"40%",
+        maxWidth:"100%",
         resizeMode:"contain",
         marginRight:1*rem,
     },

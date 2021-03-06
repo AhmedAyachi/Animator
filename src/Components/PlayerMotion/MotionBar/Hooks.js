@@ -1,32 +1,49 @@
 import {useRef} from "react";
 import {Animated,Easing} from "react-native";
+import {useSelector} from "react-redux";
 
 
 export const useScaleAnim=()=>{
-    const value=useRef((10+Math.floor(Math.random()*90))/100).current;
-    const duration=useRef(500+Math.floor(Math.random()*300)).current;
-    const scaleY=useRef(new Animated.Value(value)).current;
-    const animation=Animated.loop(
+    const state=useRef({
+        value:(10+Math.floor(Math.random()*90))/100,
+        duration:500+Math.floor(Math.random()*300),
+        animation:null,
+    }).current;
+    const scaleY=useRef(new Animated.Value(state.value)).current;
+    state.animation=Animated.loop(
         Animated.sequence([
             Animated.timing(scaleY,{
                 toValue:1,
-                duration,
+                duration:state.duration,
                 easing:Easing.linear,
                 useNativeDriver:true,
             }),
             Animated.timing(scaleY,{
                 toValue:0.05,
-                duration:0.95*duration/(1-value),
+                duration:0.95*state.duration/(1-state.value),
                 easing:Easing.linear,
                 useNativeDriver:true,
             }),
             Animated.timing(scaleY,{
-                toValue:value,
-                duration:(value-0.05)*duration/(1-value),
+                toValue:state.value,
+                duration:(state.value-0.05)*state.duration/(1-state.value),
                 easing:Easing.linear,
                 useNativeDriver:true,
             }),
         ])
     );
-    return [scaleY,animation];
+    state.animation.start();
+    const playing=useSelector(store=>store.animation7.playing);
+    if(playing){
+        state.animation.start();
+    }
+    else{
+        state.animation.stop();
+        Animated.timing(scaleY,{
+            toValue:0.05,
+            duration:300,
+            useNativeDriver:true,
+        }).start();
+    }
+    return [scaleY,state.animation];
 }

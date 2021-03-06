@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem} from "css";
+import {rem,border} from "css";
 
 
 const css=StyleSheet.create({
@@ -19,9 +19,17 @@ const css=StyleSheet.create({
         alignItems:"center",
     },
     playbtn:{
-        maxWidth:4*rem,
+        width:4*rem,
         height:4*rem,
-        opacity:0.65,
+        justifyContent:"center",
+        alignItems:"center",
+        ...border(1,"solid","#ff3d0d"),
+        borderRadius:50,
+        overflow:"hidden",
+    },
+    playbtnimg:{
+        maxWidth:"30%",
+        height:"100%",
         resizeMode:"contain",
     },
     directionbtn:{
