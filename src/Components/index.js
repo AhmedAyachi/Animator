@@ -11,3 +11,4 @@ export {default as IlluCard} from "./IlluCard/IlluCard";
 export {default as IlluBackdrop} from "./IlluBackdrop/IlluBackdrop";
 export {default as Player} from "./Player/Player";
 export {default as PlayerMotion} from "./PlayerMotion/PlayerMotion";
+export {default as PlayerControls} from "./PlayerControls/PlayerControls";

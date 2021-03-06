@@ -20,23 +20,6 @@ const css=StyleSheet.create({
         alignItems:"center",
         //...border(2,"solid","#ff3d0d"),
     },
-    btns:{
-        width:"100%",
-        flexDirection:"row",
-        justifyContent:"space-around",
-        alignItems:"center",
-    },
-    playbtn:{
-        maxWidth:5*rem,
-        height:5*rem,
-        opacity:0.65,
-        resizeMode:"contain",
-    },
-    directionbtn:{
-        maxWidth:2*rem,
-        height:2*rem,
-        resizeMode:"contain",
-    },
 });
 
 export default css;

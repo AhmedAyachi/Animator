@@ -15,10 +15,10 @@ export default function PlayerMotion(props){
 }
 
 PlayerMotion.defaultProps={
-    length:20,
+    length:30,
 }
 
-const getMotionBars=(length=20)=>{
+const getMotionBars=(length)=>{
     const bars=[];
     for(let i=0;i<length;i++){
         bars.push(<MotionBar key={useKey("motionbar")} style={{width:`${70/length}%`}}/>)
