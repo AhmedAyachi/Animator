@@ -1,13 +1,15 @@
 import {StyleSheet} from "react-native";
 import {rem} from "css";
+import {Colors} from "estate";
 
 
+const colors=Colors.animation7;
 const css=StyleSheet.create({
     playertimer:{
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
-        marginVertical:20,
+        marginTop:20,
     },
     timebar:{
         width:"90%",
@@ -18,7 +20,7 @@ const css=StyleSheet.create({
     playedbar:{
         width:"100%",
         height:"100%",
-        backgroundColor:"#ff3d0d",
+        backgroundColor:colors.primary,
     },
 });
 

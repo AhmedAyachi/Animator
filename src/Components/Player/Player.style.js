@@ -1,20 +1,29 @@
 import {StyleSheet} from "react-native";
-import {rem,border} from "css";
+import {rem,vh,border} from "css";
+import {Colors} from "estate";
 
 
+const colors=Colors.animation7;
 const css=StyleSheet.create({
     player:{
-        width:7*rem,
-        height:7*rem,
-        borderRadius:40*rem,
-        marginVertical:15,
+        width:"100%",
+        height:55*vh,
         justifyContent:"center",
         alignItems:"center",
-        //...border(2,"solid","#ff3d0d"),
-        overflow:"visible",
+    },
+    badge:{
+        width:"150%",
+        height:"100%",
+        position:"absolute",
+        top:0,
+        alignSelf:"center",
+        backgroundColor:colors.primary,
+        borderBottomLeftRadius:100*rem,
+        borderBottomRightRadius:100*rem,
+        zIndex:0,
     },
     icon:{
-        maxWidth:"100%",
+        maxWidth:"50%",
         resizeMode:"contain",
         //marginRight:1*rem,
     },

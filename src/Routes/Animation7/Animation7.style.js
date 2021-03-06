@@ -1,31 +1,34 @@
 import {StyleSheet} from "react-native";
 import {rem,border} from "css";
+import {Colors} from "estate";
 
 
+const colors=Colors.animation7;
 const css=StyleSheet.create({
     animation7:{
         width:"100%",
         flex:1,
-        backgroundColor:"#1b1b1b",
+        backgroundColor:colors.background,
     },
     background:{
         position:"absolute",
         top:0,
         width:"100%",
-        height:"50%",
-        //transform:[{rotateZ:"180deg"}]
+        height:"100%",
     },
     row0:{
         width:"100%",
-        justifyContent:"center",
         alignItems:"center",
     },
     row1:{
         width:"100%",
         flex:1,
-        justifyContent:"space-around",
+        justifyContent:"flex-end",
         alignItems:"center",
         //...border(2,"solid","#ff3d0d"),
+    },
+    playermotion:{
+        marginBottom:3*rem,
     },
 });
 

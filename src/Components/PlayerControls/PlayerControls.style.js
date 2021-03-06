@@ -1,12 +1,15 @@
 import {StyleSheet} from "react-native";
 import {rem,border} from "css";
+import {Colors} from "estate";
 
 
+const colors=Colors.animation7;
 const css=StyleSheet.create({
     playercontrols:{
         width:"100%",
         justifyContent:"space-around",
         alignItems:"center",
+        marginBottom:5*rem,
     },
     row0:{
         width:"100%",
@@ -23,7 +26,7 @@ const css=StyleSheet.create({
         height:4*rem,
         justifyContent:"center",
         alignItems:"center",
-        ...border(1,"solid","#ff3d0d"),
+        ...border(1,"solid",colors.primary),
         borderRadius:50,
         overflow:"hidden",
     },

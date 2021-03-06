@@ -8,7 +8,7 @@ import {useKey} from "afile";
 export default function PlayerMotion(props){
     const {length}=props;
     return (
-        <View style={css.playermotion}>
+        <View style={[css.playermotion,props.style]}>
             {getMotionBars(length)}
         </View>
     )

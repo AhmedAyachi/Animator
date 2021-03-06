@@ -16,15 +16,15 @@ export default function PlayerControls(props){
     },[]);
     return (
         <View style={css.playercontrols}>
-            <View style={css.row0}>
-                <PlayerTimer duration={duration}/>
-            </View>
             <View style={css.row1}>
                 <TO><Image style={css.directionbtn} source={arrow2}/></TO>
                 <TO style={css.playbtn} onPress={()=>{dispatch(setPlaying(!playing))}}>
                     <Image style={[css.playbtnimg,styles.playbtnimg(playing)]} source={playing?pause0:play1}/>
                 </TO>
                 <TO><Image style={[css.directionbtn,styles.rightarrow]} source={arrow2}/></TO>
+            </View>
+            <View style={css.row0}>
+                <PlayerTimer duration={duration}/>
             </View>
         </View>
     )
