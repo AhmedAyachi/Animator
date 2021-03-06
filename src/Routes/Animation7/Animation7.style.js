@@ -8,6 +8,13 @@ const css=StyleSheet.create({
         flex:1,
         backgroundColor:"#1b1b1b",
     },
+    background:{
+        position:"absolute",
+        top:0,
+        width:"100%",
+        height:"50%",
+        //transform:[{rotateZ:"180deg"}]
+    },
     row0:{
         width:"100%",
         justifyContent:"center",

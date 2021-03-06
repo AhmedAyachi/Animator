@@ -4,8 +4,8 @@ import {rem,border} from "css";
 
 const css=StyleSheet.create({
     player:{
-        width:5*rem,
-        height:5*rem,
+        width:7*rem,
+        height:7*rem,
         borderRadius:40*rem,
         marginVertical:15,
         justifyContent:"center",
@@ -16,7 +16,7 @@ const css=StyleSheet.create({
     icon:{
         maxWidth:"100%",
         resizeMode:"contain",
-        marginRight:1*rem,
+        //marginRight:1*rem,
     },
 });
 

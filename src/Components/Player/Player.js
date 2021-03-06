@@ -1,7 +1,7 @@
 import React from "react";
 import {View,Image,Animated} from "react-native";
 import css from "./Player.style";
-import {music1} from "assets";
+import {music1,disc0} from "assets";
 
 
 export default function Player(props){

@@ -5,26 +5,21 @@ import {} from "afile";
 
 const css={...StyleSheet.create({
     header:{
-        paddingVertical:2*rem,
-        justifyContent:"center",
-        backgroundColor:"#dc143c",
-        borderBottomWidth:5,
-        borderBottomColor:"black",
-    },
-    row0:{
+        position:"absolute",
+        top:0,
+        width:"100%",
+        paddingTop:3*rem,
         flexDirection:"row",
-        justifyContent:"space-around",
+        justifyContent:"space-between",
         alignItems:"center",
-    },
-    row1:{
-        alignItems:"center",
-    },
-    title:{
-        fontSize:3*rem,
-        color:"white",
+        zIndex:100,
     },
 }),...{
     arrow:{
+        style:{
+            opacity:0.5,
+            marginHorizontal:2*rem,
+        },
         color:"white",
         size:2*rem,
     },

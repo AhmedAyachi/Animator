@@ -20,24 +20,18 @@ export default function Header(props){
     const history=useHistory();
     return (
         <View style={css.header}>
-            <View style={css.row0}>
-                <AntDesign name="banckward" {...css.arrow} onPress={()=>{
-                    if(state.pathindex){
-                        state.pathindex--;
-                        history.goBack();
-                    }
-                }}/>
-                <Text style={css.title}>Animator</Text>
-                <AntDesign name="forward" {...css.arrow} onPress={()=>{
-                    if(state.pathindex<length-1){
-                        state.pathindex++;
-                        history.push(paths[state.pathindex]);
-                    }
-                }}/>
-            </View>
-            <View style={css.row1}>
-                <Text>{location.pathname}</Text>
-            </View>
+            <AntDesign name="banckward" {...css.arrow} onPress={()=>{
+                if(state.pathindex){
+                    state.pathindex--;
+                    history.goBack();
+                }
+            }}/>
+            <AntDesign name="forward" {...css.arrow} onPress={()=>{
+                if(state.pathindex<length-1){
+                    state.pathindex++;
+                    history.push(paths[state.pathindex]);
+                }
+            }}/>
         </View>
     )
 }
