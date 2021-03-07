@@ -8,34 +8,17 @@ export const useScaleRotation=(duration=5)=>{
     const state=useRef({
         duration:duration*1000,
         scaleXY:new Animated.Value(1),
-        rotateZ:new Animated.Value(0),
         animation:null,
     }).current;
-    if(state.animation){
-        if(playing){
-            state.animation.start();
-        }
-        else{
-            state.rotateZ.stopAnimation(()=>{
-                state.rotateZ.setValue(0);
-                state.animation=getRotationZAnimation(state);
-            });
-        }
-    }
-    else{
-        state.animation=Animated.parallel([
-            Animated.spring(state.scaleXY,{
-                toValue:1.5,
-                useNativeDriver:true,
-            }),
-            getRotationZAnimation(state),
-        ],{
-            stopTogether:false,
+    useEffect(()=>{
+        state.animation=Animated.spring(state.scaleXY,{
+            toValue:1.5,
+            useNativeDriver:true,
         });
         playing&&state.animation.start();
-    }
+    },[]);
     
-    return [state.scaleXY,state.rotateZ];
+    return [state.scaleXY];
 }
 
 const getRotationZAnimation=(state)=>Animated.loop(

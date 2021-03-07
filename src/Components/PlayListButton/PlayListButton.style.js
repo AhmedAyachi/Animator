@@ -5,7 +5,7 @@ import {Colors} from "estate";
 
 const colors=Colors.animation7;
 const css={...StyleSheet.create({
-    songslist:{
+    playlistbutton:{
         width:"90%",
         flexDirection:"row",
         justifyContent:"flex-end",
@@ -20,7 +20,7 @@ const css={...StyleSheet.create({
         justifyContent:"flex-end",
         alignItems:"center",
     },
-    list:{
+    songslist:{
         width:"100%",
         height:"100%",
         overflow:"hidden",

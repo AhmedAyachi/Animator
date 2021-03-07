@@ -12,9 +12,10 @@ const css=StyleSheet.create({
     },
     background:{
         position:"absolute",
-        top:0,
         width:"100%",
         height:"100%",
+        top:0,
+        alignSelf:"center",
     },
     row0:{
         width:"100%",

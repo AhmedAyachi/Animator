@@ -4,7 +4,7 @@ import {Colors} from "estate";
 
 
 const colors=Colors.animation7;
-const css=StyleSheet.create({
+const css={...StyleSheet.create({
     playercontrols:{
         width:"100%",
         justifyContent:"space-around",
@@ -26,20 +26,23 @@ const css=StyleSheet.create({
         height:4*rem,
         justifyContent:"center",
         alignItems:"center",
-        ...border(1,"solid",colors.primary),
+        ...border(1.5,"solid",colors.primary),
         borderRadius:50,
         overflow:"hidden",
     },
-    playbtnimg:{
-        maxWidth:"30%",
-        height:"100%",
-        resizeMode:"contain",
-    },
+}),...{
     directionbtn:{
-        maxWidth:2*rem,
-        height:2*rem,
-        resizeMode:"contain",
+        name:"controller-next",
+        size:2.5*rem,
+        color:colors.primary,
+        style:{
+            opacity:0.9,
+        },
     },
-});
+    playbtnicon:{
+        size:2*rem,
+        color:colors.primary,
+    },
+}};
 
 export default css;

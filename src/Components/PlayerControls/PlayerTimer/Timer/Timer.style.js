@@ -1,7 +1,9 @@
 import {StyleSheet} from "react-native";
 import {rem} from "css";
+import {Colors} from "estate";
 
 
+const colors=Colors.animation7;
 const css=StyleSheet.create({
     timer:{
         width:"85%",
@@ -12,7 +14,7 @@ const css=StyleSheet.create({
     },
     time:{
         fontSize:1*rem,
-        color:"white",
+        color:colors.primary,
         opacity:0.7,
     },
 });

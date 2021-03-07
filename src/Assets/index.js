@@ -24,6 +24,7 @@ export {default as pause0} from "./Images/Pause_0.png";
 export {default as arrow2} from "./Images/Arrow_2.png";
 export {default as disc0} from "./Images/Disc_0.png";
 export {default as disc2} from "./Images/Disc_2.png";
+export {default as souhila0} from "./Images/Souhila_0.jpeg";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";

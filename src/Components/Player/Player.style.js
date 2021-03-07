@@ -20,6 +20,7 @@ const css=StyleSheet.create({
         backgroundColor:colors.primary,
         borderBottomLeftRadius:100*rem,
         borderBottomRightRadius:100*rem,
+        opacity:0.65,
         zIndex:0,
     },
     corner:{
@@ -30,11 +31,14 @@ const css=StyleSheet.create({
         right:0,
         backgroundColor:colors.secondary,
         borderBottomLeftRadius:100*rem,
-        //borderBottomRightRadius:100*rem,
+        opacity:0.5,
     },
     icon:{
-        maxWidth:"50%",
-        resizeMode:"contain",
+        maxWidth:15*rem,
+        height:15*rem,
+        overflow:"hidden",
+        borderRadius:100,
+        resizeMode:"cover",
     },
 });
 

@@ -6,9 +6,9 @@ import {useKey} from "afile";
 
 
 export default function SongRow(props){
-    const {song:{title,artist}}=props;
+    const {song:{title,artist},isCurrent,onPress}=props;
     return (
-        <View style={css.songrow}>
+        <View style={css.songrow} onPress={onPress}>
             <View style={css.col0}>
                 <Text style={css.title}>{title}</Text>
                 <Text style={css.artist}>{artist}</Text>

@@ -30,7 +30,7 @@ const css=StyleSheet.create({
         fontSize:1*rem,
         textTransform:"capitalize",
         marginVertical:2,
-        color:colors.secondary,
+        color:"white",
     },
 });
 

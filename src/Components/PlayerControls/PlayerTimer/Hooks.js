@@ -24,9 +24,10 @@ export const useProgressBar=(duration,containerRef)=>{
             });
             state.animation.start(({finished})=>{
                 if(finished){
-                    dispatch(setPlaying(false));
-                    //state.animation.reset();
-                    state.progress.setValue(0);
+                    state.progress.stopAnimation(()=>{
+                        dispatch(setPlaying(false));
+                        state.progress.setValue(0);
+                    });
                 }
             });
         }

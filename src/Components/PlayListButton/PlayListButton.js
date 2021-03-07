@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {View,Image,Modal,FlatList,TouchableOpacity as TO} from "react-native";
-import css from "./SongsList.style";
+import css from "./PlayListButton.style";
 import {MaterialCommunityIcons as MCI} from "@expo/vector-icons";
 import {LinearGradient} from "expo-linear-gradient";
 import {useKey} from "afile";
@@ -8,11 +8,11 @@ import SongRow from "./SongRow/SongRow";
 import {Colors} from "estate";
 
 
-export default function SongsList(props){
-    const {songs}=props;
+export default function PlayListButton(props){
+    const {songs,currentIndex,onSelect}=props;
     const [isVisible,setIsVisible]=useState(false);
     return (
-        <View style={css.songslist}>
+        <View style={css.playlistbutton}>
             <TO onPress={()=>{setIsVisible(true)}}>
                 <MCI {...css.listbtn}/>
             </TO>
@@ -24,19 +24,20 @@ export default function SongsList(props){
                 onRequestClose={()=>{setIsVisible(false)}}
             >
                 <View style={css.modalview}>
+                    
                     <LinearGradient 
                         style={css.listbackground} 
-                        colors={[colors.primary,"transparent"]}
+                        colors={["#a347ff","transparent"]}
                         locations={[0.01,1]}
                         start={[0.5,0]} end={[0.5,1]}
                     />
-                    <View style={css.list}>
+                    <View style={css.songslist}>
                         <FlatList
                             showsVerticalScrollIndicator={false}
                             data={songs}
                             keyExtractor={()=>useKey("songrow")}
-                            renderItem={({item})=>
-                                <SongRow song={item}/>
+                            renderItem={({item,index})=>currentIndex===index||
+                                <SongRow song={item} onPress={()=>{onSelect(index)}}/>
                             }
                         />
                     </View>
@@ -46,7 +47,7 @@ export default function SongsList(props){
     )
 }
 
-SongsList.defaultProps={
+PlayListButton.defaultProps={
     songs:new Array(20).fill({title:"Song title",artist:"Song artist"}),
 }
 
