@@ -23,6 +23,5 @@ export const usePlayTime=(duration,barwidth,timebarwidth)=>{
     else if(playtime>=duration){
         setPlayTime(0);
     }
-    useEffect(()=>()=>{clearTimeout(timeout)},[]);
     return playtime;
 }

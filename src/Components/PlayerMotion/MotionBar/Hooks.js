@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 
 export const useScaleAnim=()=>{
     const state=useRef({
-        value:(10+Math.floor(Math.random()*90))/100,
+        value:0.05,
         duration:500+Math.floor(Math.random()*300),
         animation:null,
     }).current;
@@ -32,18 +32,18 @@ export const useScaleAnim=()=>{
             }),
         ])
     );
-    state.animation.start();
     const playing=useSelector(store=>store.animation7.playing);
+    const stopanim=useRef(Animated.timing(scaleY,{
+        toValue:0.05,
+        duration:300,
+        useNativeDriver:true,
+    })).current;
     if(playing){
         state.animation.start();
     }
     else{
         state.animation.stop();
-        Animated.timing(scaleY,{
-            toValue:0.05,
-            duration:300,
-            useNativeDriver:true,
-        }).start();
+        stopanim.start();
     }
     return [scaleY,state.animation];
 }

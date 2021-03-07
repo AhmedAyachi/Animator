@@ -6,11 +6,11 @@ import * as H from "./Hooks";
 
 
 export default function PlayerTimer(props){
-    const {duration}=props;
+    const {index,duration}=props;
     const refs=useRef({
         timebar:useRef(),
     }).current;
-    const [progress,timebarwidth]=H.useProgressBar(duration,refs.timebar);
+    const [progress,timebarwidth]=H.useProgressBar(index,duration,refs.timebar);
     return (
         <View style={css.playertimer}>
             {timebarwidth&&

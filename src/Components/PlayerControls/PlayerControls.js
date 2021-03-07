@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect,memo} from "react";
 import {View,Image,TouchableOpacity as TO} from "react-native";
 import css from "./PlayerControls.style";
 import {Entypo} from "@expo/vector-icons"; 
@@ -7,10 +7,10 @@ import {useSelector,useDispatch} from "react-redux";
 import {setPlaying} from "actions";
 
 
-export default function PlayerControls(props){
+export default memo(function PlayerControls(props){
     const dispatch=useDispatch();
     const playing=useSelector(store=>store.animation7.playing);
-    const {duration,onNext,onPrevious}=props;
+    const {index,duration,onNext,onPrevious}=props;
     useEffect(()=>()=>{
         dispatch(setPlaying(true));
     },[]);
@@ -28,11 +28,11 @@ export default function PlayerControls(props){
                 <TO onPress={onNext}><Entypo {...css.directionbtn}/></TO>
             </View>
             <View style={css.row0}>
-                <PlayerTimer duration={duration}/>
+                <PlayerTimer index={index} duration={duration}/>
             </View>
         </View>
     )
-}
+});
 
 const styles={
     leftarrow:{

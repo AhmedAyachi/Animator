@@ -27,7 +27,7 @@ export default function PlayListButton(props){
                     
                     <LinearGradient 
                         style={css.listbackground} 
-                        colors={["#a347ff","transparent"]}
+                        colors={[colors.secondary,"transparent"]}
                         locations={[0.01,1]}
                         start={[0.5,0]} end={[0.5,1]}
                     />

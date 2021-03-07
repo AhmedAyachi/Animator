@@ -5,7 +5,6 @@ export {default as bird0} from "./Images/Bird_0.png";
 export {default as bottle0} from "./Images/Bottle_0.png";
 export {default as controller0} from "./Images/Controller_0.png";
 export {default as energy0} from "./Images/Energy_0.png";
-export {default as rose0} from "./Images/Rose_0.jpeg";
 export {default as profile0} from "./Images/Profile_0.jpg";
 export {default as profile1} from "./Images/Profile_1.jpeg"; 
 export {default as profile2} from "./Images/Profile_2.jpg"; 
@@ -17,14 +16,8 @@ export {default as nowel0} from "./Images/Nowel_0.png";
 export {default as privor0} from "./Images/Privor_0.png";
 export {default as samji0} from "./Images/Samji_0.png";
 export {default as Toyzy0} from "./Images/Toyzy_0.png";
-export {default as music1} from "./Images/Music_1.png";
-export {default as music2} from "./Images/Music_2.png";
-export {default as play1} from "./Images/Play_1.png";
-export {default as pause0} from "./Images/Pause_0.png";
-export {default as arrow2} from "./Images/Arrow_2.png";
-export {default as disc0} from "./Images/Disc_0.png";
-export {default as disc2} from "./Images/Disc_2.png";
 export {default as souhila0} from "./Images/Souhila_0.jpeg";
+export {default as warning0} from "./Images/Warning_0.png";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";

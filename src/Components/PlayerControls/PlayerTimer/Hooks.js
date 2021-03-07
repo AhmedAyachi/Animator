@@ -4,22 +4,27 @@ import {useSelector,useDispatch} from "react-redux";
 import {setPlaying} from "actions";
 
 
-export const useProgressBar=(duration,containerRef)=>{
+export const useProgressBar=(index,duration,containerRef)=>{
     const [_,render]=useState(false);
     const dispatch=useDispatch();
     const playing=useSelector(store=>store.animation7.playing);
     const state=useRef({
+        songindex:index,
         progress:useRef(new Animated.Value(0)).current,
-        duration:duration*1000,
         timebarwidth:null,
         animation:null,
     }).current;
+
+    if(state.songindex!==index){
+        state.songindex=index;
+        state.progress.setValue(0);
+    }
     if(state.timebarwidth){
         if(playing){
             state.animation=Animated.timing(state.progress,{
                 toValue:state.timebarwidth,
                 easing:Easing.linear,
-                duration:(state.timebarwidth-state.progress._value)*state.duration/state.timebarwidth,
+                duration:(state.timebarwidth-state.progress._value)*duration*1000/state.timebarwidth,
                 useNativeDriver:false,
             });
             state.animation.start(({finished})=>{
@@ -31,7 +36,7 @@ export const useProgressBar=(duration,containerRef)=>{
                 }
             });
         }
-        else{
+        else if(state.animation){
             state.animation.stop();
         }
     }
