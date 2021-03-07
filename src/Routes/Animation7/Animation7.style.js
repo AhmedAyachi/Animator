@@ -30,6 +30,9 @@ const css=StyleSheet.create({
     playermotion:{
         marginBottom:3*rem,
     },
+    songslist:{
+        height:"100%",
+    },
 });
 
 export default css;

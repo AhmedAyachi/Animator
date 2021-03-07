@@ -9,7 +9,7 @@ const css=StyleSheet.create({
         width:"100%",
         justifyContent:"space-around",
         alignItems:"center",
-        marginBottom:5*rem,
+        marginBottom:2*rem,
     },
     row0:{
         width:"100%",

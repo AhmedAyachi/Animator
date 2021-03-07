@@ -12,9 +12,9 @@ const css=StyleSheet.create({
         alignItems:"center",
     },
     badge:{
+        position:"absolute",
         width:"150%",
         height:"100%",
-        position:"absolute",
         top:0,
         alignSelf:"center",
         backgroundColor:colors.primary,
@@ -22,10 +22,19 @@ const css=StyleSheet.create({
         borderBottomRightRadius:100*rem,
         zIndex:0,
     },
+    corner:{
+        position:"absolute",
+        width:"55%",
+        height:"55%",
+        top:0,
+        right:0,
+        backgroundColor:colors.secondary,
+        borderBottomLeftRadius:100*rem,
+        //borderBottomRightRadius:100*rem,
+    },
     icon:{
         maxWidth:"50%",
         resizeMode:"contain",
-        //marginRight:1*rem,
     },
 });
 

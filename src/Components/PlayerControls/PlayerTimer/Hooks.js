@@ -9,7 +9,7 @@ export const useProgressBar=(duration,containerRef)=>{
     const dispatch=useDispatch();
     const playing=useSelector(store=>store.animation7.playing);
     const state=useRef({
-        progress:new Animated.Value(0),
+        progress:useRef(new Animated.Value(0)).current,
         duration:duration*1000,
         timebarwidth:null,
         animation:null,
@@ -25,7 +25,7 @@ export const useProgressBar=(duration,containerRef)=>{
             state.animation.start(({finished})=>{
                 if(finished){
                     dispatch(setPlaying(false));
-                    state.animation.reset();
+                    //state.animation.reset();
                     state.progress.setValue(0);
                 }
             });
