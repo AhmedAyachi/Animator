@@ -8,7 +8,7 @@ const css=StyleSheet.create({
     player:{
         width:"100%",
         height:55*vh,
-        justifyContent:"center",
+        justifyContent:"space-around",
         alignItems:"center",
     },
     badge:{
@@ -32,6 +32,19 @@ const css=StyleSheet.create({
         backgroundColor:colors.secondary,
         borderBottomLeftRadius:100*rem,
         opacity:1,
+    },
+    songinfo:{
+        justifyContent:"center",
+        alignItems:"center",
+    },
+    title:{
+        fontSize:2*rem,
+        textTransform:"capitalize",
+        color:"white",
+    },
+    artist:{
+        textTransform:"capitalize",
+        color:"white",
     },
     icon:{
         maxWidth:15*rem,

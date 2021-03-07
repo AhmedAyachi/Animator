@@ -18,6 +18,7 @@ export {default as samji0} from "./Images/Samji_0.png";
 export {default as Toyzy0} from "./Images/Toyzy_0.png";
 export {default as souhila0} from "./Images/Souhila_0.jpeg";
 export {default as warning0} from "./Images/Warning_0.png";
+export {default as inmyhead0} from "./Images/InMyHead_0.png";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";
