@@ -8,7 +8,6 @@ const css={...StyleSheet.create({
     badge:{
         width:"100%",
         height:"100%",
-        backgroundColor:colors.primary,
         justifyContent:"flex-end",
         alignItems:"center",
     },
@@ -16,7 +15,7 @@ const css={...StyleSheet.create({
         position:"absolute",
         width:"100%",
         height:"100%",
-        top:0,
+        bottom:0,
         alignSelf:"center",
         opacity:0.5,
         backgroundColor:colors.primary,

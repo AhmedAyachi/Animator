@@ -15,7 +15,7 @@ export default function BandProber(props){
 const styles={
     bandprober:(height,containerHeight)=>({
         height:height.interpolate({
-            inputRange:[containerHeight*0.9,containerHeight],
+            inputRange:[containerHeight*0.2,containerHeight],
             outputRange:["0%","100%"],
         }),
         opacity:height.interpolate({

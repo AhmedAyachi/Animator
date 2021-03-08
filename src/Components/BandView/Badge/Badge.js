@@ -9,27 +9,27 @@ import {Colors} from "estate";
 export default function Badge(props){
     const {band,height,containerHeight}=props;
     return (
-        <Animated.View style={[css.badge,styles.badge(height,containerHeight)]}>
-           <Animated.View style={[css.content,styles.content(height,containerHeight)]}>
+        <Animated.View style={css.badge}>
+            <Animated.View style={[css.background,styles.background(height,containerHeight)]}/>
+            <Animated.View style={[css.content,{height:height._value}]}>
                 <View style={css.col0}>
-                    <View style={css.row0}>
+                    <Animated.View style={[css.row0,styles.content(height,containerHeight)]}>
                         {band.name.split(" ").map(text=>
                             <Text style={css.welcome} key={useKey("text")}>{text}</Text>
                         )}
-                    </View>
-                    <View style={css.row1}>
+                    </Animated.View>
+                    <Animated.View style={css.row1}>
                         {["overview","about","events"].map(label=>
                             <Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Text>
                         )}
-                    </View>
+                    </Animated.View>
                 </View>
-                <View style={css.col1}>
+                <Animated.View style={[css.col1,styles.content(height,containerHeight)]}>
                     {["youtube","spotify","soundcloud"].map(name=>
                         <FontAwesome key={useKey("name")} {...css.logo} name={name}/>
                     )}
                     <Text style={css.followus}>follow us</Text>
-                </View>
-                {/*<View style={css.background}/>*/}
+                </Animated.View>
             </Animated.View>
         </Animated.View>
     )
@@ -37,23 +37,26 @@ export default function Badge(props){
 
 const colors=Colors.animation8;
 const styles={
-    badge:(height,containerHeight)=>({
-        height,
-        backgroundColor:height.interpolate({
-            inputRange:[containerHeight/2,containerHeight],
-            outputRange:[colors.primary,"#161726"],
-            exterpolate:"clamp",
-        }),
-    }),
     content:(height,containerHeight)=>({
-        height:containerHeight/2,
         transform:[{translateY:height.interpolate({
-            inputRange:[containerHeight/2,containerHeight],
-            outputRange:[0,-containerHeight/3],
+            inputRange:[height._value,containerHeight],
+            outputRange:[0,-100],
         })}],
         opacity:height.interpolate({
-            inputRange:[containerHeight/2,containerHeight],
+            inputRange:[height._value,containerHeight],
             outputRange:[1,0],
         }),
     }),
+    background:(height,containerHeight)=>({
+        height,
+        backgroundColor:height.interpolate({
+            inputRange:[height._value,containerHeight],
+            outputRange:[colors.primary,"#161726"],
+            exterpolate:"clamp",
+        }),
+        opacity:height.interpolate({
+            inputRange:[height._value,containerHeight],
+            outputRange:[0.5,1],
+        }),
+    })
 }

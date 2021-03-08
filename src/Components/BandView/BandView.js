@@ -3,21 +3,17 @@ import {View,Animated,Easing} from "react-native";
 import css from "./BandView.style";
 import Badge from "./Badge/Badge";
 import BandProber from "./BandProber/BandProber";
+import * as H from "./Hooks";
 
 
 export default function BandView(props){
     const {band,containerDimensions}=props;
-    const height=useRef(new Animated.Value(containerDimensions.height/2)).current;
-    Animated.timing(height,{
-        toValue:containerDimensions.height,
-        duration:1000,
-        easing:Easing.sin,
-        useNativeDriver:false,
-    }).start();
+    const [height,animation]=H.useSwipeAnimation(containerDimensions.height);
+    //animation.start();
     return (
         <View style={[css.bandview,styles.bandview(containerDimensions)]}>
             <Badge band={band} height={height} containerHeight={containerDimensions.height}/>
-            <BandProber band={band} height={height} containerHeight={containerDimensions.height}/>
+            {/*<BandProber band={band} height={height} containerHeight={containerDimensions.height}/>*/}
         </View>
     )
 }
