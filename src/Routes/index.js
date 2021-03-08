@@ -8,3 +8,4 @@ export {default as Animation4} from "./Animation4/Animation4";
 export {default as Animation5} from "./Animation5/Animation5";
 export {default as Animation6} from "./Animation6/Animation6";
 export {default as Animation7} from "./Animation7/Animation7";
+export {default as Animation8} from "./Animation8/Animation8";

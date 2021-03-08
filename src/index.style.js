@@ -1,12 +1,12 @@
 import {Animated} from "react-native";
 import {Dimensions} from "react-native";
 import {useFonts} from "expo-font";
-import {princesssofia} from "assets";
+import {princesssofia,anton,cabin} from "assets";
 
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        princesssofia,
+        princesssofia,anton,cabin,
     });
     return loaded;
 }

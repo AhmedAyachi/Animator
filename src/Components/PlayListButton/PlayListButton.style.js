@@ -27,11 +27,6 @@ const css={...StyleSheet.create({
         paddingTop:2*rem,
         paddingHorizontal:"10%",
     },
-    separator:{
-        width:"100%",
-        height:0.05,
-        backgroundColor:"white",
-    },
     listbackground:{
         position:"absolute",
         width:"100%",

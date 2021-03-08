@@ -5,4 +5,8 @@ export default {
         primary:"#1b1b1b",
         secondary:"#262626",
     },
+    animation8:{
+        primary:"#532d6f",
+        secondary:"white",
+    },
 };

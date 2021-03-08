@@ -13,3 +13,4 @@ export {default as Player} from "./Player/Player";
 export {default as PlayerMotion} from "./PlayerMotion/PlayerMotion";
 export {default as PlayerControls} from "./PlayerControls/PlayerControls";
 export {default as PlayListButton} from "./PlayListButton/PlayListButton";
+export {default as SwipeView} from "./SwipeView/SwipeView";

@@ -34,7 +34,6 @@ export default function PlayListButton(props){
                     <View style={css.songslist}>
                         <FlatList
                             showsVerticalScrollIndicator={false}
-                            ItemSeparatorComponent={()=><View style={css.separator}/>}
                             data={songs}
                             keyExtractor={()=>useKey("songrow")}
                             renderItem={({item,index})=>
