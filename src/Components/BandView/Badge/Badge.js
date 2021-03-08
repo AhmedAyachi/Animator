@@ -1,16 +1,17 @@
 import React from "react";
 import {View,Text} from "react-native";
-import css from "./SwipeView.style";
+import css from "./Badge.style";
 import {FontAwesome} from "@expo/vector-icons"; 
 import {useKey} from "afile";
 
 
-export default function SwipeView(props){
+export default function Badge(props){
+    const {band}=props;
     return (
-        <View style={css.swipeview}>
+        <View style={css.badge}>
             <View style={css.col0}>
                 <View style={css.row0}>
-                    {["die","Antwoord"].map(text=>
+                    {band.name.split(" ").map(text=>
                         <Text style={css.welcome} key={useKey("text")}>{text}</Text>
                     )}
                 </View>

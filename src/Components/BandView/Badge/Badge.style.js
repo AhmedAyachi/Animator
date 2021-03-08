@@ -5,12 +5,14 @@ import {Colors} from "estate";
 
 const colors=Colors.animation8;
 const css={...StyleSheet.create({
-    swipeview:{
+    badge:{
         width:"100%",
         height:"50%",
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center",
+        overflow:"hidden",
+        //...border(1,"solid","white"),
     },
     background:{
         position:"absolute",
@@ -28,6 +30,7 @@ const css={...StyleSheet.create({
         justifyContent:"space-between",
         paddingHorizontal:"10%",
         zIndex:1,
+        //...border(1,"solid","white"),
     },
     col1:{
         flex:1,
@@ -35,15 +38,20 @@ const css={...StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         zIndex:1,
+        //...border(1,"solid","white"),
     },
     row0:{
         width:"100%",
+        flex:1,
+        justifyContent:"center",
         paddingTop:1*rem,
+        //...border(1,"solid","white"),
     },
     row1:{
         width:"100%",
-        flex:1,
+        flex:3,
         justifyContent:"center",
+        //...border(1,"solid","white"),
     },
     welcome:{
         fontFamily:"anton",
