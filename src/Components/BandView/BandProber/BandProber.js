@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import {Animated,Text,View,Image,Platform,UIManager,LayoutAnimation,TouchableWithoutFeedback as TWF} from "react-native";
+import {Animated,Text,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./BandProber.style";
 import {useKey} from "afile";
 import {rem,border,vh} from "css";
@@ -31,12 +31,12 @@ const styles={
     bandprober:(height,containerHeight)=>({
         height:height.interpolate({
             inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
-            outputRange:[100,containerHeight*0.95],
+            outputRange:[css.bandprober.height,containerHeight*0.95],
             extrapolate:"clamp",
         }),
         bottom:height.interpolate({
             inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
-            outputRange:["10%","0%"],
+            outputRange:[css.bandprober.bottom,0],
             extrapolate:"clamp",
         }),
     }),
@@ -47,8 +47,8 @@ const styles={
             extrapolate:"clamp",
         }),
     }),
-    row1:(height,containerHeight,flexDirection)=>({
-        display:flexDirection?"flex":"none",
+    row1:(height,containerHeight,probed)=>({
+        display:probed?"flex":"none",
         opacity:height.interpolate({
             inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
             outputRange:[0,1],

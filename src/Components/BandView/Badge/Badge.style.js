@@ -32,6 +32,7 @@ const css={...StyleSheet.create({
     col0:{
         flex:4,
         height:"100%",
+        paddingTop:2*rem,
         justifyContent:"flex-start",
         paddingHorizontal:"10%",
         zIndex:1,

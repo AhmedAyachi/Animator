@@ -36,8 +36,8 @@ const styles={
     content:(height,containerHeight)=>({
         height:containerHeight/2,
         transform:[{translateY:height.interpolate({
-            inputRange:[containerHeight/2,containerHeight*0.75],
-            outputRange:[0,-2*vh],
+            inputRange:[containerHeight/2,containerHeight*0.8],
+            outputRange:[0,-20*vh],
         })}],
         opacity:height.interpolate({
             inputRange:[containerHeight/2,containerHeight*0.7],
@@ -48,7 +48,7 @@ const styles={
         height,
         backgroundColor:height.interpolate({
             inputRange:[height._value,containerHeight],
-            outputRange:[colors.primary,"#161726"],
+            outputRange:[colors.primary,colors.background],
             exterpolate:"clamp",
         }),
         opacity:height.interpolate({

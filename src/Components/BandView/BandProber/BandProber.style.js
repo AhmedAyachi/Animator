@@ -8,10 +8,12 @@ const css=StyleSheet.create({
     bandprober:{
         position:"absolute",
         width:"100%",
-        bottom:"10%",
+        height:15*rem,
+        bottom:5*rem,
         justifyContent:"flex-start",
         alignItems:"center",
         overflow:"hidden",
+        //...border(1,"solid","white"),
     },
     row0:{
         width:"90%",
@@ -21,8 +23,8 @@ const css=StyleSheet.create({
         alignItems:"flex-start",
     },
     row1:{
-        display:"none",
         width:"100%",
+        display:"none",
         flex:1,
         justifyContent:"center",
         alignItems:"center",

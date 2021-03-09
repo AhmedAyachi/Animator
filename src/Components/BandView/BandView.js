@@ -1,5 +1,5 @@
-import React,{useRef,useState} from "react";
-import {View,LayoutAnimation,Platform,UIManager} from "react-native";
+import React,{useState} from "react";
+import {View,LayoutAnimation} from "react-native";
 import css from "./BandView.style";
 import Badge from "./Badge/Badge";
 import BandProber from "./BandProber/BandProber";
@@ -19,7 +19,7 @@ export default function BandView(props){
                 containerHeight={containerDimensions.height}
                 onSwipeUp={()=>{
                     if(!probed){
-                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                        LayoutAnimation.configureNext(layoutconfig);
                         setFlexDirection("row");
                         animation.start(({finished})=>{
                             finished&&setProbed(true);
@@ -35,8 +35,7 @@ export default function BandView(props){
                 probed={probed}
                 onClose={()=>{
                     if(probed){
-                        console.log(LayoutAnimation.Presets.spring);
-                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                        LayoutAnimation.spring();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
                             finished&&setProbed(false);
@@ -48,6 +47,22 @@ export default function BandView(props){
     )
 }
 
+const layoutconfig={
+    duration:850,
+    update:{
+        type:LayoutAnimation.Types.easeIn,
+    },
+    create:{
+        delay:250,
+        type:LayoutAnimation.Types.easeIn,
+        property:LayoutAnimation.Properties.opacity,
+    },
+    delete:{
+        delay:100,
+        type:LayoutAnimation.Types.easeIn,
+        property:LayoutAnimation.Properties.opacity,
+    },
+};
 const styles={
     bandview:({width})=>({width}),
 }

@@ -8,5 +8,6 @@ export default {
     animation8:{
         primary:"#532d6f",
         secondary:"white",
+        background:"#161726",
     },
 };
