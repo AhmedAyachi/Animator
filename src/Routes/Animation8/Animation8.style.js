@@ -16,7 +16,6 @@ const css=StyleSheet.create({
         resizeMode:"cover",
     },
     bandslist:{
-        //flex:1,
         height:"100%",
         justifyContent:"flex-start",
     },

@@ -9,6 +9,8 @@ const css=StyleSheet.create({
         justifyContent:"flex-end",
         alignItems:"center",
         overflow:"hidden",
+        paddingTop:2*rem,
+        //...border(1,"solid","red"),
     },
     content:{
         width:"100%",

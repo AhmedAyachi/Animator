@@ -13,7 +13,7 @@ export default function Animation8(){
     }).current;
     useEffect(()=>{
         refs.animation8.current.measure((x,y,width,height)=>{
-            setDimensions({width,height});
+            setDimensions({width:width-css.animation8.borderWidth*2,height});
         });
     },[]);
     return (

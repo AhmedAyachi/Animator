@@ -32,7 +32,7 @@ const css={...StyleSheet.create({
     col0:{
         flex:4,
         height:"100%",
-        justifyContent:"space-between",
+        justifyContent:"flex-start",
         paddingHorizontal:"10%",
         zIndex:1,
     },
@@ -43,35 +43,12 @@ const css={...StyleSheet.create({
         alignItems:"center",
         zIndex:1,
     },
-    row0:{
-        width:"100%",
-        flex:1,
-        justifyContent:"center",
-        paddingTop:1*rem,
-    },
-    row1:{
-        width:"100%",
-        flex:3,
-        justifyContent:"center",
-    },
-    welcome:{
+    bandname:{
         fontFamily:"anton",
         fontSize:4*rem,
         marginVertical:-1.25*rem,
         textTransform:"capitalize",
         color:colors.secondary,
-    },
-    label:{
-        fontFamily:"cabin",
-        fontSize:1.75*rem,
-        textTransform:"capitalize",
-        marginVertical:1*rem,
-        opacity:0.5,
-        color:colors.secondary,
-    },
-    overview:{
-        fontSize:2*rem,
-        opacity:1,
     },
     followus:{
         fontFamily:"anton",
