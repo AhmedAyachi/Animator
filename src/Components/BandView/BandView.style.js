@@ -6,6 +6,7 @@ import {Colors} from "estate";
 const colors=Colors.animation8;
 const css=StyleSheet.create({
     bandview:{
+        height:"100%",
         justifyContent:"flex-end",
         alignItems:"center",
         overflow:"hidden",

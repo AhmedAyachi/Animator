@@ -1,5 +1,5 @@
 import React,{useRef} from "react";
-import {View,Text,Animated,Easing} from "react-native";
+import {View,Text,Animated,Easing,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./Badge.style";
 import {FontAwesome} from "@expo/vector-icons"; 
 import {useKey} from "afile";
@@ -8,8 +8,9 @@ import {Colors} from "estate";
 
 
 export default function Badge(props){
-    const {band,height,containerHeight}=props;
+    const {band,height,containerHeight,onSwipeUp}=props;
     return (
+        <TWF onPress={onSwipeUp}>
         <Animated.View style={css.badge}>
             <Animated.View style={[css.background,styles.background(height,containerHeight)]}/>
             <Animated.View style={[css.content,styles.content(height,containerHeight)]}>
@@ -26,6 +27,7 @@ export default function Badge(props){
                 </View>
             </Animated.View>
         </Animated.View>
+        </TWF>
     )
 }
 

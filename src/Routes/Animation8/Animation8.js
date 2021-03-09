@@ -18,7 +18,7 @@ export default function Animation8(){
     },[]);
     return (
         <View ref={refs.animation8} style={css.animation8}>
-            <ImageBackground style={css.background} source={bands[0].cover} blurRadius={2}>
+            <ImageBackground style={css.background} source={bands[0].cover} blurRadius={3}>
                 {dimensions&&
                     <FlatList 
                         horizontal pagingEnabled

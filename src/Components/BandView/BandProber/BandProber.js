@@ -1,65 +1,54 @@
 import React,{useState,useEffect} from "react";
-import {Animated,Text,Image,Platform,UIManager,LayoutAnimation} from "react-native";
+import {Animated,Text,View,Image,Platform,UIManager,LayoutAnimation,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./BandProber.style";
 import {useKey} from "afile";
 import {rem,border,vh} from "css";
 
 
 export default function BandProber(props){
-    const {band,height,containerHeight}=props;
-    const [flexDirection,setFlexDirection]=useState("column");
-    useEffect(()=>{
-        let isMounted=true;
-        height.addListener(({value})=>{
-            if(isMounted&&flexDirection==="column"&&value>=sharedState.getOnValue(containerHeight)){
-                alert("anim");
-                LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-                setFlexDirection("row");
-            }
-            else{
-                height.removeAllListeners();
-            }
-        });
-        return ()=>{
-            isMounted=false;
-        }
-    },[]);
+    const {band,height,containerHeight,flexDirection,onClose,probed}=props;
     return (
-        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]}>
-            <Animated.View style={[css.row0,{flexDirection}]}>
+        <TWF onPress={onClose}>
+        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]} >
+            <Animated.View style={[css.row0,{flexDirection},styles.row0(height,containerHeight)]}>
                 {["overview","about","events"].map(label=>
                     <Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Text>
-                )}
+                )}           
             </Animated.View>
-            {/*<Animated.View style={[css.row1,{display:flexDirection==="row"?"flex":"none"},styles.row1(height,containerHeight)]}>
-                <Text >Hello</Text>
-                </Animated.View>*/}
+            <Animated.View style={[css.row1,styles.row1(height,containerHeight,probed)]}>
+                <Text style={{color:"white"}}>{band.name}</Text>
+            </Animated.View>
         </Animated.View>
+        </TWF>
     )
 }
 
 const sharedState={
-    getOnValue:(containerHeight)=>containerHeight*0.85,
-}
-
-if(Platform.OS==="android"&&UIManager.setLayoutAnimationEnabledExperimental){
-    UIManager.setLayoutAnimationEnabledExperimental(true);
+    getOnValue:(containerHeight)=>containerHeight*0.6,
 }
 
 const styles={
     bandprober:(height,containerHeight)=>({
         height:height.interpolate({
-            inputRange:[containerHeight*0.7,containerHeight],
-            outputRange:[100,containerHeight],
+            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
+            outputRange:[100,containerHeight*0.95],
             extrapolate:"clamp",
         }),
         bottom:height.interpolate({
-            inputRange:[containerHeight*0.7,containerHeight],
+            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
             outputRange:["10%","0%"],
             extrapolate:"clamp",
         }),
     }),
-    row1:(height,containerHeight)=>({
+    row0:(height,containerHeight)=>({
+        width:height.interpolate({
+            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
+            outputRange:[css.row0.width,"100%"],
+            extrapolate:"clamp",
+        }),
+    }),
+    row1:(height,containerHeight,flexDirection)=>({
+        display:flexDirection?"flex":"none",
         opacity:height.interpolate({
             inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
             outputRange:[0,1],

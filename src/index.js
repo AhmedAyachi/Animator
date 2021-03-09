@@ -1,4 +1,5 @@
 import React from "react";
+import {Platform,UIManager} from "react-native";
 import {NativeRouter} from "react-router-native";
 import {registerRootComponent} from "expo";
 import {createStore} from "redux";
@@ -10,6 +11,9 @@ import {useCustomFonts} from "./index.style";
 
 
 const store=createStore(Reducer,composeWithDevTools());
+if(Platform.OS==="android"&&UIManager.setLayoutAnimationEnabledExperimental){
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 registerRootComponent(()=>{
     const fontsloaded=useCustomFonts();
