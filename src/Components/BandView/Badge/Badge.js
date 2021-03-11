@@ -49,7 +49,6 @@ const styles={
         backgroundColor:height.interpolate({
             inputRange:[height._value,containerHeight],
             outputRange:[colors.primary,colors.background],
-            exterpolate:"clamp",
         }),
         opacity:height.interpolate({
             inputRange:[height._value,containerHeight],

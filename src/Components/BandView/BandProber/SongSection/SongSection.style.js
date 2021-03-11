@@ -8,6 +8,7 @@ const css=StyleSheet.create({
     songsection:{
         width:"100%",
         maxHeight:"100%",
+        paddingLeft:"15%",
         //...border(1,"solid","white"),
     },
     title:{

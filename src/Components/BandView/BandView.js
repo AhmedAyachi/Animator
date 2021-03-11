@@ -7,7 +7,7 @@ import * as H from "./Hooks";
 
 
 export default function BandView(props){
-    const {band,containerDimensions}=props;
+    const {band,listRef,containerDimensions}=props;
     const [probed,setProbed]=useState(false);
     const [flexDirection,setFlexDirection]=useState("column");
     const [height,animation]=H.useSwipeAnimation(containerDimensions.height,probed);
@@ -19,6 +19,9 @@ export default function BandView(props){
                 containerHeight={containerDimensions.height}
                 onSwipeUp={()=>{
                     if(!probed){
+                        listRef.current.setNativeProps({
+                            scrollEnabled:false,
+                        });
                         LayoutAnimation.configureNext(layoutconfig);
                         setFlexDirection("row");
                         animation.start(({finished})=>{
@@ -35,6 +38,9 @@ export default function BandView(props){
                 probed={probed}
                 onClose={()=>{
                     if(probed){
+                        listRef.current.setNativeProps({
+                            scrollEnabled:true,
+                        });
                         LayoutAnimation.spring();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
@@ -53,7 +59,6 @@ const layoutconfig={
         type:LayoutAnimation.Types.easeIn,
     },
     create:{
-        delay:250,
         type:LayoutAnimation.Types.easeIn,
         property:LayoutAnimation.Properties.opacity,
     },

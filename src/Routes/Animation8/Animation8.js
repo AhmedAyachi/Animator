@@ -11,6 +11,7 @@ export default function Animation8(){
     const scrollX=useRef(new Animated.Value(0)).current;
     const refs=useRef({
         animation8:useRef(),
+        bandslist:useRef(),
     }).current;
     useEffect(()=>{
         refs.animation8.current.measure((x,y,width,height)=>{
@@ -37,14 +38,19 @@ export default function Animation8(){
             }
             {dimensions&&
                 <Animated.FlatList 
+                    contentContainerStyle={css.bandslist}
+                    ref={refs.bandslist}
                     horizontal pagingEnabled
                     onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:true})}
-                    contentContainerStyle={css.bandslist}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={()=>useKey("bandview")}
                     data={bands}
                     renderItem={({item})=>
-                        <BandView band={item} containerDimensions={dimensions}/>
+                        <BandView 
+                            band={item} 
+                            listRef={refs.bandslist}
+                            containerDimensions={dimensions}
+                        />
                     }
                 />
             }

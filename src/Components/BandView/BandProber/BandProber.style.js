@@ -4,16 +4,16 @@ import {Colors} from "estate";
 
 
 const colors=Colors.animation8;
-const css=StyleSheet.create({
+const css={...StyleSheet.create({
     bandprober:{
         position:"absolute",
         width:"100%",
-        height:20*rem,
+        height:18*rem,
         left:0,
         bottom:0,
+        paddingBottom:1*rem,
         justifyContent:"flex-start",
         alignItems:"center",
-        paddingLeft:"15%",
         overflow:"hidden",
         //...border(1,"solid","white"),
     },
@@ -21,6 +21,7 @@ const css=StyleSheet.create({
         width:"100%",
         flexDirection:"column",
         paddingRight:2*rem,
+        paddingLeft:"15%",
         justifyContent:"space-between",
         alignItems:"flex-start",
         overflow:"hidden",
@@ -42,6 +43,10 @@ const css=StyleSheet.create({
         width:"100%",
         overflow:"scroll",
         //...border(1,"solid","white"),
+    },
+    row4:{
+        width:"100%",
+        paddingLeft:"15%",
     },
     label:{
         fontFamily:"cabin",
@@ -84,6 +89,15 @@ const css=StyleSheet.create({
         color:colors.text,
         opacity:0.85,
     },
-});
+}),...{
+    closebtn:{
+        size:2*rem,
+        color:colors.secondary,
+        style:{
+            marginTop:1*rem,
+            marginLeft:"13%",
+        },
+    },
+}};
 
 export default css;

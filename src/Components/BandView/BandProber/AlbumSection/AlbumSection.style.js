@@ -16,9 +16,11 @@ const css=StyleSheet.create({
         fontWeight:"600",
         color:colors.secondary,
         marginBottom:1.25*rem,
+        paddingLeft:"15%",
     },
     albums:{
         paddingRight:"10%",
+        paddingLeft:"15%",
         paddingBottom:2*rem,
     },
     album:{

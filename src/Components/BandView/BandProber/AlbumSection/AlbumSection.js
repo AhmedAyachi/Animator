@@ -13,12 +13,7 @@ export default function AlbumSection(props){
                 contentContainerStyle={css.albums}
                 nestedScrollEnabled={true}
                 showsHorizontalScrollIndicator={false}
-                /*onTouchStart={(event)=>{
-        
-                }}
-                onTouchEnd={(event)=>{
-    
-                }}*/
+                bounces={false}
             >
             {albums.map(({name,cover})=>
                 <View style={css.album} key={useKey("album")}>

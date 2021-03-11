@@ -1,6 +1,7 @@
 import React from "react";
-import {Animated,Text,TouchableWithoutFeedback as TWF,ScrollView} from "react-native";
+import {Text,Animated,TouchableOpacity as TO} from "react-native";
 import css from "./BandProber.style";
+import {AntDesign} from "@expo/vector-icons";
 import SongSection from "./SongSection/SongSection";
 import AlbumSection from "./AlbumSection/AlbumSection";
 import {useKey} from "afile";
@@ -9,8 +10,8 @@ import {useKey} from "afile";
 export default function BandProber(props){
     const {band,height,containerHeight,flexDirection,onClose}=props;
     return (
-        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]} onTouchStart={onClose}>
-            <Animated.View style={[css.row0,{flexDirection}/*,styles.row0(height,containerHeight)*/]}>
+        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]}>
+            <Animated.View style={[css.row0,{flexDirection}]}>
                 {["overview","about","events"].map(label=>
                     <Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Text>
                 )}           
@@ -21,6 +22,7 @@ export default function BandProber(props){
                 </Animated.View>
                 <Animated.View style={css.row3}>
                     <AlbumSection albums={band.albums}/>
+                    <TO><AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={onClose}/></TO>
                 </Animated.View>
             </Animated.View>
         </Animated.View>
@@ -38,19 +40,7 @@ const styles={
             outputRange:[css.bandprober.height,containerHeight*0.97],
             extrapolate:"clamp",
         }),
-        /*paddingBottom:height.interpolate({
-            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
-            outputRange:[css.bandprober.paddingBottom,0],
-            extrapolate:"clamp",
-        }),*/
     }),
-    /*row0:(height,containerHeight)=>({
-        width:height.interpolate({
-            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
-            outputRange:[css.row0.width,"100%"],
-            extrapolate:"clamp",
-        }),
-    }),*/
     row1:(height,containerHeight,flexDirection)=>({
         display:flexDirection?"flex":"none",
         opacity:height.interpolate({
