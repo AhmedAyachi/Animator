@@ -26,15 +26,16 @@ const css={...StyleSheet.create({
         height:"100%",
         flexDirection:"row",
         justifyContent:"space-between",
-        alignItems:"center",
+        alignItems:"flex-start",
         overflow:"hidden",
     },
     col0:{
         flex:4,
-        height:"100%",
+        maxHeight:"50%",
         paddingTop:2*rem,
         justifyContent:"flex-start",
         paddingHorizontal:"10%",
+        overflow:"scroll",
         zIndex:1,
     },
     col1:{
@@ -51,7 +52,7 @@ const css={...StyleSheet.create({
         textTransform:"capitalize",
         color:colors.secondary,
     },
-    followus:{
+    followband:{
         fontFamily:"anton",
         fontSize:1*rem,
         marginVertical:2*rem,

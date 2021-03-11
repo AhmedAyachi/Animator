@@ -15,7 +15,7 @@ export const useDrag=()=>{
         onPanResponderMove:(event,touch)=>{
             const {dx,dy}=touch;
             coords.setValue({x:dx,y:dy});
-        },//Animated.event([null,{dx:coords.x,dy:coords.y}],{useNativeDriver:false}),
+        },
         onPanResponderRelease:()=>{
             backToOrigin.start();
         },

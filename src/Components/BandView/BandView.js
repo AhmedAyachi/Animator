@@ -58,7 +58,6 @@ const layoutconfig={
         property:LayoutAnimation.Properties.opacity,
     },
     delete:{
-        delay:100,
         type:LayoutAnimation.Types.easeIn,
         property:LayoutAnimation.Properties.opacity,
     },

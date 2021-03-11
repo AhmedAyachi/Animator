@@ -9,5 +9,6 @@ export default {
         primary:"#532d6f",
         secondary:"white",
         background:"#161726",
+        text:"#605f6f",
     },
 };

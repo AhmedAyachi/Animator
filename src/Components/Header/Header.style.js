@@ -8,7 +8,7 @@ const css={...StyleSheet.create({
         position:"absolute",
         top:0,
         width:"100%",
-        paddingTop:3*rem,
+        paddingTop:8.5*rem,
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center",

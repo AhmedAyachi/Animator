@@ -20,8 +20,14 @@ export {default as souhila0} from "./Images/Souhila_0.jpeg";
 export {default as warning0} from "./Images/Warning_0.png";
 export {default as inmyhead0} from "./Images/InMyHead_0.png";
 export {default as diewoord0} from "./Images/DieWoord_0.png";
+export {default as worldsaxophone0} from "./Images/WorldSaxophoneQuartet_0.jpg";
+export {default as yearsnadyears0} from "./Images/YearsAndYears_0.jpeg";
+export {default as tension} from "./Images/tension_0.jpg";
+export {default as sos} from "./Images/Sos_0.png";
+export {default as houseofzef} from "./Images/HouseOfZef_0.jpg";
 
 //Fonts:
 export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";
 export {default as anton} from "./Fonts/Anton-Regular.ttf";
 export {default as cabin} from "./Fonts/Cabin-Regular.ttf";
+export {default as squadaone} from "./Fonts/SquadaOne-Regular.ttf";

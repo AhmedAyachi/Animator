@@ -1,17 +1,18 @@
 import React,{useRef} from "react";
-import {View,Text,Animated,Easing,TouchableWithoutFeedback as TWF} from "react-native";
+import {View,Text,Animated,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./Badge.style";
 import {FontAwesome} from "@expo/vector-icons"; 
 import {useKey} from "afile";
 import {vh} from "css";
 import {Colors} from "estate";
+import * as H from "./Hooks";
 
 
 export default function Badge(props){
     const {band,height,containerHeight,onSwipeUp}=props;
+    const panResponder=H.useSwipeUp(onSwipeUp);
     return (
-        <TWF onPress={onSwipeUp}>
-        <Animated.View style={css.badge}>
+        <Animated.View style={css.badge} {...panResponder.panHandlers}>
             <Animated.View style={[css.background,styles.background(height,containerHeight)]}/>
             <Animated.View style={[css.content,styles.content(height,containerHeight)]}>
                 <View style={css.col0}>
@@ -23,11 +24,10 @@ export default function Badge(props){
                     {["youtube","spotify","soundcloud"].map(name=>
                         <FontAwesome key={useKey("name")} {...css.logo} name={name}/>
                     )}
-                    <Text style={css.followus}>follow us</Text>
+                    <Text style={css.followband}>follow band</Text>
                 </View>
             </Animated.View>
         </Animated.View>
-        </TWF>
     )
 }
 
