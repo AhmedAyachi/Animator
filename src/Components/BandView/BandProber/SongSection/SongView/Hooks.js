@@ -8,7 +8,6 @@ export const usePlayingAnimation=(duration)=>{
     const [isPaused,setIsPaused]=useState(!playing);
     const state=useRef({
         duration:duration*10,
-        //isPaused:!playing,
         width:Object.assign(new Animated.Value(0),{
             from:0,
             to:1,
@@ -28,36 +27,38 @@ export const usePlayingAnimation=(duration)=>{
             start:()=>{
                 if(!playing){
                     setPlaying(true);
-                    state.isPaused=false;
-                    alert("touched");
+                    setIsPaused(false);
                     animation.start(({finished})=>{
                         if(finished){
                             const {width}=state;
                             width.setValue(width.from);
+                            state.duration=duration*10;
                             setPlaying(false);
+                            setIsPaused(true);
                         }
                     });
                 }
             },
             toggle:function(){
-                state.isPaused=!state.isPaused;
-                //console.log(state.isPaused);
-                if(state.isPaused){
-                    state.width.stopAnimation(value=>{
-                        const toValue=state.width.to;
-                        state.duration=state.duration*(toValue-value)/toValue;
-                        alert(state.duration);
-                    });
-                }
-                else{
+                if(isPaused){
                     animation.start(({finished})=>{
                         if(finished){
                             const {width}=state;
                             width.setValue(width.from);
+                            state.duration=duration*10;
                             setPlaying(false);
+                            setIsPaused(true);
                         }
                     });
                 }
+                else{
+                    state.width.stopAnimation(value=>{
+                        const toValue=state.width.to;
+                        state.duration=state.duration*(toValue-value)/toValue;
+                        //alert(state.duration);
+                    });
+                }
+                setIsPaused(!isPaused);
             },
             duration:state.duration,
     }];
