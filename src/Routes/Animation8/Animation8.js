@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from "react";
 import {View,ImageBackground,Animated} from "react-native";
 import css from "./Animation8.style";
 import {BandView} from "components";
-import {diewoord0,worldsaxophone0,yearsnadyears0,tension,sos,houseofzef} from "assets";
+import {revue,diewoord0,worldsaxophone0,yearsnadyears0,tension,sos,houseofzef,palosanto,communion,ashiftinmoods,kitsunereal,metamorphosis,dancesandballads} from "assets";
 import {useKey} from "afile";
 
 
@@ -68,13 +68,27 @@ const bands=[
             {title:"come sunday",duration:462},
             {title:"the holy men",duration:168},
         ],
-        albums:[],
+        albums:[
+            {name:"metamorphosis",cover:metamorphosis},
+            {name:"dances and ballads",cover:dancesandballads},
+            {name:"revue",cover:revue},
+        ],
     },
     {
         name:"years & years",
         cover:yearsnadyears0,
-        populars:[],
-        albums:[],
+        populars:[
+            {title:"shine",duration:265},
+            {title:"worship",duration:290},
+            {title:"take shelter",duration:263},
+            {title:"if you're over me",duration:261},
+        ],
+        albums:[
+            {name:"palo santo",cover:palosanto},
+            {name:"kitsuné | real",cover:kitsunereal},
+            {name:"a shift in moods",cover:ashiftinmoods},
+            {name:"communion",cover:communion},
+        ],
     },
     {
         name:"die antwoord",

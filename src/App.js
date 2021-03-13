@@ -11,7 +11,7 @@ import {useKey} from "afile";
 export default function App(){
     return (
         <View style={css.app}>
-            <StatusBar style="inverted"/>
+            <StatusBar style="inverted" hidden/>
             <Header paths={routes.map((route,i)=>`/${i||""}`)}/>
             {routes.map((Component,i)=>
                 <Route 

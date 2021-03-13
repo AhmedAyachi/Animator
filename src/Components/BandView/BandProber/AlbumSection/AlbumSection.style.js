@@ -17,6 +17,7 @@ const css=StyleSheet.create({
         color:colors.secondary,
         marginBottom:1.25*rem,
         paddingLeft:"15%",
+        marginBottom:3*rem,
     },
     albums:{
         paddingRight:"10%",
@@ -40,6 +41,23 @@ const css=StyleSheet.create({
         textTransform:"capitalize",
         marginTop:1*rem,
         color:colors.text,
+    },
+    morebg:{
+        width:"100%",
+        height:15*rem,
+    },
+    moreview:{
+        width:"100%",
+        height:"100%",
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor:"black",
+        opacity:0.6,
+    },
+    moretext:{
+        color:colors.secondary,
+        fontWeight:"600",
+        fontSize:1.5*rem,
     },
 });
 

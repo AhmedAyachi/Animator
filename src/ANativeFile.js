@@ -1,6 +1,61 @@
-import {useMemo} from "react";
-import {Animated} from "react-native";
+import {useRef,useMemo} from "react";
+import {Animated,Easing} from "react-native";
 
+
+/*export const useFadeIn=(duration=0.25)=>{
+    const state=useRef({
+       opacity:new Animated.Value(0),
+       duration:duration*1000,
+    }).current;
+    const animation=Animated.timing(state.opacity,{
+        toValue:1,
+        duration:state.duration,
+        easing:Easing.linear,
+        useNativeDriver:true,
+    });
+
+    return [{
+        opacity:state.opacity,
+    },{
+        stop:(callback)=>{state.opacity.stopAnimation(callback)},
+        reset:()=>{state.opacity.setValue(0)},
+        start:(ref,callback)=>{
+            state.opacity.setValue(0);
+            ref&&ref.setNativeProps({style:{
+                display:"flex",
+                opacity:state.opacity,
+            }});
+            animation.start(callback);
+        },
+    },
+    ];
+}
+
+export const useFadeOut=(duration=0.25)=>{
+    const state=useRef({
+       opacity:new Animated.Value(1),
+       duration:duration*1000,
+    }).current;
+    const animation=Animated.timing(state.opacity,{
+        toValue:1,
+        duration:state.duration,
+        easing:Easing.linear,
+        useNativeDriver:true,
+    });
+
+    return [{
+        opacity:state.opacity,
+    },{
+        stop:(callback)=>{state.opacity.stopAnimation(callback)},
+        reset:()=>{state.opacity.setValue(0)},
+        start:(ref,callback)=>{
+            state.opacity.setValue(0);
+            ref&&ref.setNativeProps({style:{display:"flex"}});
+            animation.start(callback);
+        },
+    },
+    ];
+}*/
 
 export const fadeIn=(opacity,duration=300)=>useMemo(()=>{
     const animation=(()=>Animated.timing(opacity,{

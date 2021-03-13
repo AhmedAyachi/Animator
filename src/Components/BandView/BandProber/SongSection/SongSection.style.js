@@ -8,7 +8,7 @@ const css=StyleSheet.create({
     songsection:{
         width:"100%",
         maxHeight:"100%",
-        paddingLeft:"15%",
+        paddingHorizontal:"15%",
         //...border(1,"solid","white"),
     },
     title:{
@@ -18,27 +18,10 @@ const css=StyleSheet.create({
         color:colors.secondary,
         marginBottom:1.25*rem,
     },
-    song:{
+    songslist:{
         width:"100%",
-        flexDirection:"row",
-        justifyContent:"space-around",
-        alignItems:"center",
-        marginVertical:1*rem,
-    },
-    songtitle:{
-        flex:5,
-        textTransform:"capitalize",
-        fontWeight:"700",
-        fontSize:1.5*rem,
-        color:colors.text,
-        opacity:0.85,
-    },
-    songduration:{
-        flex:1,
-        fontWeight:"700",
-        fontSize:1.25*rem,
-        color:colors.text,
-        opacity:0.85,
+        maxHeight:19*rem,
+        //...border(1,"solid","white"),
     },
 });
 
