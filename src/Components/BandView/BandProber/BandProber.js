@@ -10,7 +10,7 @@ import * as H from "./Hooks";
 
 export default function BandProber(props){
     const {band,height,containerHeight,flexDirection,onClose}=props;
-    const [y,animation]=H.usePopUpAnimation(height,containerHeight);
+    const [y]=H.usePopUpAnimation(height,containerHeight,flexDirection);
     return (
         <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]}>
             <Animated.View style={[css.row0,{flexDirection}]}>
@@ -18,17 +18,19 @@ export default function BandProber(props){
                     <Animated.Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Animated.Text>
                 )}           
             </Animated.View>
-            <Animated.View style={[css.row1,styles.row1(height,containerHeight,flexDirection)]}>
+        {flexDirection==="row"&&
+            <Animated.View style={css.row1}>
                 <Animated.View style={[css.row2,styles.row2(y)]}>
                     <SongSection songs={band.populars}/>
                 </Animated.View>
                 <Animated.View style={[css.row3,styles.row3(y)]}>
                     <AlbumSection albums={band.albums}/>
                     <TO activeOpacity={0.1}>
-                        <AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={()=>{onClose(()=>{y.setValue(y.initValue)})}}/>
+                        <AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={()=>{onClose(()=>{y.setValue(y.from)})}}/>
                     </TO>
                 </Animated.View>
             </Animated.View>
+        }
         </Animated.View>
     )
 }
@@ -45,30 +47,23 @@ const styles={
             extrapolate:"clamp",
         }),
     }),
-    row1:(height,containerHeight,flexDirection)=>({
-        display:flexDirection?"flex":"none",
-        opacity:height.interpolate({
-            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
-            outputRange:[0,1],
-        }),
-    }),
     row2:(y)=>({
         opacity:y.interpolate({
-            inputRange:[y.toValue,y.initValue],
+            inputRange:[y.to,y.from],
             outputRange:[1,0],
         }),
         transform:[{translateY:y}],
     }),
     row3:(y)=>({
         opacity:y.interpolate({
-            inputRange:[y.toValue,y.initValue],
+            inputRange:[y.to,y.from],
             outputRange:[1,0],
         }),
         transform:["X","Y"].flatMap(side=>{
             const translate={},scale={};
             translate[`translate${side}`]=y;
             scale[`scale${side}`]=y.interpolate({
-                inputRange:[y.toValue,y.initValue],
+                inputRange:[y.to,y.from],
                 outputRange:[1,1.5],
             });
             return [scale,translate];

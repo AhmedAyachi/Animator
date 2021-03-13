@@ -14,6 +14,7 @@ const css={...StyleSheet.create({
         paddingBottom:1*rem,
         justifyContent:"flex-start",
         alignItems:"center",
+        ...border(1,"solid","transparent"),
     },
     row0:{
         width:"100%",
@@ -25,7 +26,6 @@ const css={...StyleSheet.create({
     },
     row1:{
         width:"100%",
-        display:"none",
         flex:1,
         paddingTop:3*rem,
         justifyContent:"space-around",
@@ -38,10 +38,6 @@ const css={...StyleSheet.create({
     row3:{
         width:"100%",
         opacity:0,
-    },
-    row4:{
-        width:"100%",
-        paddingLeft:"15%",
     },
     label:{
         fontFamily:"cabin",
