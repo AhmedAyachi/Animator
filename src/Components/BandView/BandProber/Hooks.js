@@ -4,14 +4,17 @@ import {Animated} from "react-native";
 
 export const usePopUpAnimation=(height,containerHeight,flexDirection)=>{
     const state=useRef({
-        initValue:50,
-        toValue:0,
-        y:new Animated.Value(50),
+        /*initValue:50,
+        toValue:0,*/
+        y:Object.assign(new Animated.Value(50),{
+            from:50,
+            to:0,
+        }),
         duration:500,
         delay:100,
     }).current;
     const animation=Animated.timing(state.y,{
-        toValue:state.toValue,
+        toValue:state.y.to,
         duration:state.duration,
         delay:state.delay,
         useNativeDriver:true,
@@ -25,12 +28,8 @@ export const usePopUpAnimation=(height,containerHeight,flexDirection)=>{
         return ()=>{
             height.removeListener(popupstarter);
         }
-    },[]);
-    return [
-        Object.assign(state.y,{
-           toValue:state.toValue,
-           initValue:state.initValue,
-        }),{
+    },[flexDirection]);
+    return [state.y,{
             ...animation,
             duration:state.duration,
         },

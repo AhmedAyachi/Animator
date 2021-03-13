@@ -41,7 +41,7 @@ export default function BandView(props){
                         listRef.current.setNativeProps({
                             scrollEnabled:true,
                         });
-                        LayoutAnimation.spring();
+                        LayoutAnimation.linear();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
                             if(finished){
