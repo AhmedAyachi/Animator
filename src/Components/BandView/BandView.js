@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import {View,LayoutAnimation} from "react-native";
+import {View,Text,LayoutAnimation} from "react-native";
 import css from "./BandView.style";
 import Badge from "./Badge/Badge";
 import BandProber from "./BandProber/BandProber";
@@ -41,7 +41,7 @@ export default function BandView(props){
                         listRef.current.setNativeProps({
                             scrollEnabled:true,
                         });
-                        LayoutAnimation.linear();
+                        LayoutAnimation.spring();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
                             finished&&setProbed(false);
