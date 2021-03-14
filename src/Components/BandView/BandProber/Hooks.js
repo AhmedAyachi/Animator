@@ -2,7 +2,7 @@ import {useRef,useEffect} from "react";
 import {Animated} from "react-native";
 
 
-export const usePopUpAnimation=(height,containerHeight,probed)=>{
+export const usePopUpAnimation=(probed)=>{
     const state=useRef({
         y:Object.assign(new Animated.Value(50),{
             from:50,
@@ -12,15 +12,19 @@ export const usePopUpAnimation=(height,containerHeight,probed)=>{
         delay:100,
     }).current;
     useEffect(()=>{
-        Animated.timing(state.y,{
-            toValue:state.y.to,
-            duration:state.duration,
-            delay:state.delay,
-            useNativeDriver:true,
-        }).start(({finished})=>{
-            //finished&&height.removeListener(popupstarter);
-        });
-        /*const popupstarter=height.addListener(({value})=>{
+        if(probed){
+            Animated.timing(state.y,{
+                toValue:state.y.to,
+                duration:state.duration,
+                delay:state.delay,
+                useNativeDriver:true,
+            }).start();
+        }
+    },[probed]);
+    return [state.y];
+}
+
+/*const popupstarter=height.addListener(({value})=>{
             if(value>=containerHeight){
                 Animated.timing(state.y,{
                     toValue:state.y.to,
@@ -32,6 +36,4 @@ export const usePopUpAnimation=(height,containerHeight,probed)=>{
                 });
             }
         });*/
-    },[probed]);
-    return [state.y];
-}
+        //finished&&height.removeListener(popupstarter);

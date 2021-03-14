@@ -10,16 +10,16 @@ import * as H from "./Hooks";
 
 export default function BandProber(props){
     const {band,height,containerHeight,flexDirection,onClose,probed}=props;
-    const [y]=H.usePopUpAnimation(height,containerHeight,probed);
+    const [y]=H.usePopUpAnimation(probed);
     return (
-        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]}>
+        <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]} remove>
             <Animated.View style={[css.row0,{flexDirection}]}>
                 {["overview","about","events"].map(label=>
                     <Animated.Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Animated.Text>
                 )}           
             </Animated.View>
-        {probed&&
-            <Animated.View style={css.row1}>
+            <Animated.View style={[css.row1,styles.row1(height,containerHeight)]}>
+            {probed&&<>
                 <Animated.View style={[css.row2,styles.row2(y)]}>
                     <SongSection songs={band.populars}/>
                 </Animated.View>
@@ -29,21 +29,25 @@ export default function BandProber(props){
                         <AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={onClose}/>
                     </TO>
                 </Animated.View>
+            </>}
             </Animated.View>
-        }
         </Animated.View>
     )
 }
 
-const sharedState={
-    getOnValue:(containerHeight)=>containerHeight*0.6,
-}
 
 const styles={
     bandprober:(height,containerHeight)=>({
         height:height.interpolate({
-            inputRange:[sharedState.getOnValue(containerHeight),containerHeight],
+            inputRange:[containerHeight*0.6,containerHeight],
             outputRange:[css.bandprober.height,containerHeight*0.97],
+            extrapolate:"clamp",
+        }),
+    }),
+    row1:(height,containerHeight)=>({
+        opacity:height.interpolate({
+            inputRange:[containerHeight*0.6,containerHeight],
+            outputRange:[0,1],
             extrapolate:"clamp",
         }),
     }),

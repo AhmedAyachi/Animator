@@ -22,7 +22,7 @@ export default function BandView(props){
                         listRef.current.setNativeProps({
                             scrollEnabled:false,
                         });
-                        LayoutAnimation.configureNext(layoutconfig);
+                        LayoutAnimation.easeInEaseOut();
                         setFlexDirection("row");
                         animation.start(({finished})=>{
                             finished&&setProbed(true);
@@ -41,7 +41,7 @@ export default function BandView(props){
                         listRef.current.setNativeProps({
                             scrollEnabled:true,
                         });
-                        LayoutAnimation.linear();
+                        LayoutAnimation.configureNext(layoutconfig);
                         setFlexDirection("column");
                         animation.start(({finished})=>{
                             finished&&setProbed(false);
@@ -59,12 +59,13 @@ const layoutconfig={
         type:LayoutAnimation.Types.easeIn,
     },
     create:{
-        type:LayoutAnimation.Types.easeIn,
+        type:LayoutAnimation.Types.easeOut,
         property:LayoutAnimation.Properties.opacity,
     },
     delete:{
         type:LayoutAnimation.Types.easeIn,
         property:LayoutAnimation.Properties.opacity,
+        duration:300,
     },
 };
 const styles={

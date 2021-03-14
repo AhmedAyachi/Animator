@@ -14,7 +14,7 @@ const css={...StyleSheet.create({
         paddingBottom:1*rem,
         justifyContent:"flex-start",
         alignItems:"center",
-        ...border(1,"solid","transparent"),
+        //...border(1,"solid","transparent"),
     },
     row0:{
         width:"100%",
