@@ -11,7 +11,6 @@ const css=StyleSheet.create({
         alignItems:"center",
         overflow:"hidden",
         paddingTop:2*rem,
-        //...border(1,"solid","red"),
     },
     content:{
         width:"100%",

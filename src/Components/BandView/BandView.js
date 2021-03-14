@@ -41,7 +41,7 @@ export default function BandView(props){
                         listRef.current.setNativeProps({
                             scrollEnabled:true,
                         });
-                        LayoutAnimation.spring();
+                        LayoutAnimation.easeInEaseOut();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
                             finished&&setProbed(false);
@@ -56,20 +56,8 @@ export default function BandView(props){
 const layoutconfig={
     duration:850,
     update:{
-        type:LayoutAnimation.Types.linear,
-        property:LayoutAnimation.Properties.scaleX,
-        duration:850,
-    },
-    create:{
-        type:LayoutAnimation.Types.easeOut,
-        property:LayoutAnimation.Properties.opacity,
-        delay:200,
-        duration:650,
-    },
-    delete:{
-        type:LayoutAnimation.Types.easeOut,
-        property:LayoutAnimation.Properties.opacity,
-        duration:250,
+        type:LayoutAnimation.Types.easeIn,
+        //delay:500,
     },
 };
 const styles={

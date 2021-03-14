@@ -14,7 +14,6 @@ const css={...StyleSheet.create({
         paddingBottom:1*rem,
         justifyContent:"flex-start",
         alignItems:"center",
-        //...border(1,"solid","transparent"),
     },
     row0:{
         width:"100%",
@@ -23,6 +22,7 @@ const css={...StyleSheet.create({
         paddingLeft:"15%",
         justifyContent:"space-between",
         alignItems:"flex-start",
+        //...border(1,"solid","white"),
     },
     row1:{
         width:"100%",

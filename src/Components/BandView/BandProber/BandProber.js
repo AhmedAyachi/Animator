@@ -14,9 +14,9 @@ export default function BandProber(props){
     return (
         <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]} remove>
             <Animated.View style={[css.row0,{flexDirection}]}>
-                {["overview","about","events"].map(label=>
-                    <Animated.Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Animated.Text>
-                )}           
+                <Text style={[css.label,css.overview]}>overview</Text>
+                <Text style={[css.label,css.about]}>about</Text>
+                <Text style={[css.label,css.events]}>events</Text>          
             </Animated.View>
             <Animated.View style={[css.row1,styles.row1(height,containerHeight)]}>
             {probed&&<>

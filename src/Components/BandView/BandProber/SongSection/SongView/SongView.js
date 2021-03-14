@@ -19,8 +19,8 @@ export default function SongView(props){
                     <TO onPress={()=>{animation.toggle()}}><Ionicons {...css.stopbtnicon} name="md-musical-note-sharp"/></TO>
                 </Animated.View>
             }
-                <Text style={css.title}>{title}</Text>
-                <Text style={css.duration}>{getMinutes(duration)}:{getSeconds(duration)}</Text>
+                <Text style={[css.title,styles.title(playing)]}>{title}</Text>
+                <Text style={[css.duration,styles.duration(playing)]}>{getMinutes(duration)}:{getSeconds(duration)}</Text>
             </View>
             <View style={css.row1}>
             {playing&&
@@ -39,5 +39,11 @@ const styles={
             inputRange:[width.from,width.to],
             outputRange:[css.progressbar.width,"100%"],
         }),
+    }),
+    title:(playing)=>({
+        color:playing?"white":css.title.color,
+    }),
+    duration:(playing)=>({
+        color:playing?"white":css.title.color,
     }),
 }

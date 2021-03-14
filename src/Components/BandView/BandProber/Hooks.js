@@ -23,17 +23,3 @@ export const usePopUpAnimation=(probed)=>{
     },[probed]);
     return [state.y];
 }
-
-/*const popupstarter=height.addListener(({value})=>{
-            if(value>=containerHeight){
-                Animated.timing(state.y,{
-                    toValue:state.y.to,
-                    duration:state.duration,
-                    delay:state.delay,
-                    useNativeDriver:true,
-                }).start(({finished})=>{
-                    finished&&height.removeListener(popupstarter);
-                });
-            }
-        });*/
-        //finished&&height.removeListener(popupstarter);
