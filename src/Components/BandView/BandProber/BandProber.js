@@ -35,7 +35,6 @@ export default function BandProber(props){
     )
 }
 
-
 const styles={
     bandprober:(height,containerHeight)=>({
         height:height.interpolate({

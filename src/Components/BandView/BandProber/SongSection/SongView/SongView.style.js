@@ -6,8 +6,10 @@ import {Colors} from "estate";
 const colors=Colors.animation8;
 const css={...StyleSheet.create({
     songview:{
-        width:"100%",
+        width:"70%",
         marginVertical:1*rem,
+        alignSelf:"center",
+        overflow:"visible",
         //...border(1,"solid","white"),
     },
     row0:{
@@ -36,9 +38,10 @@ const css={...StyleSheet.create({
         opacity:0.85,
     },
     progressbarbg:{
-        width:"100%",
-        marginTop:2*rem,
+        width:"95%",
         height:0.25*rem,
+        marginTop:2*rem,
+        alignSelf:"flex-start",
         backgroundColor:colors.text,
     },
     progressbar:{
@@ -47,8 +50,10 @@ const css={...StyleSheet.create({
         backgroundColor:colors.primary,
     },
     stopbtn:{
-        marginRight:1*rem,
-        
+        position:"absolute",
+        left:-2.5*rem,
+        //marginRight:1*rem,
+        //padding:3,
     },
 }),...{
     stopbtnicon:{

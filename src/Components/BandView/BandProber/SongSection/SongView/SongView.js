@@ -8,15 +8,14 @@ import * as H from "./Hooks";
 
 export default function SongView(props){
     const {song:{title,duration}}=props;
-    const [width,playing,animation]=H.usePlayingAnimation(duration);
-    //console.log("rendered",playing);
+    const [width,opacity,playing,animation]=H.usePlayingAnimation(duration);
     return (
         <View style={css.songview} onTouchStart={()=>{
             animation.start();
         }}>
             <View style={css.row0}>
             {playing&&
-                <Animated.View style={[css.stopbtn]}>
+                <Animated.View style={[css.stopbtn,{opacity}]}>
                     <TO onPress={()=>{animation.toggle()}}><Ionicons {...css.stopbtnicon} name="md-musical-note-sharp"/></TO>
                 </Animated.View>
             }
@@ -25,7 +24,7 @@ export default function SongView(props){
             </View>
             <View style={css.row1}>
             {playing&&
-                <Animated.View style={[css.progressbarbg]}>
+                <Animated.View style={[css.progressbarbg,{opacity}]}>
                     <Animated.View style={[css.progressbar,styles.progressbar(width)]}/>
                 </Animated.View>
             }
