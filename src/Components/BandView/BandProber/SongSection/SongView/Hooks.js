@@ -56,10 +56,9 @@ export const usePlayingAnimation=(duration)=>{
             toggle:function(){
                 state.isPaused=!state.isPaused;
                 if(state.isPaused){
-                    state.width.stopAnimation(value=>{
-                        const toValue=state.width.to;
-                        state.duration=state.duration*(toValue-value)/toValue;
-                    });
+                    const {_value,to}=state.width;
+                    state.width.setValue(_value);
+                    state.duration=state.duration*(to-_value)/to;
                 }
                 else{
                     Animated.sequence([
