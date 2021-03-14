@@ -24,4 +24,4 @@ export default function App(){
     );
 }
 
-//const routes=Object.values(Animations).reverse();
+const routes=Object.values(Animations).reverse();
