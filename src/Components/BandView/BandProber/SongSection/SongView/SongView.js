@@ -9,7 +9,7 @@ import * as H from "./Hooks";
 export default function SongView(props){
     const {song:{title,duration}}=props;
     const [width,playing,animation]=H.usePlayingAnimation(duration);
-    console.log("rendered",playing);
+    //console.log("rendered",playing);
     return (
         <View style={css.songview} onTouchStart={()=>{
             animation.start();

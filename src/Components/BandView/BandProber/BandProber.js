@@ -9,8 +9,8 @@ import * as H from "./Hooks";
 
 
 export default function BandProber(props){
-    const {band,height,containerHeight,flexDirection,onClose}=props;
-    const [y]=H.usePopUpAnimation(height,containerHeight,flexDirection);
+    const {band,height,containerHeight,flexDirection,onClose,probed}=props;
+    const [y]=H.usePopUpAnimation(height,containerHeight,probed);
     return (
         <Animated.View style={[css.bandprober,styles.bandprober(height,containerHeight)]}>
             <Animated.View style={[css.row0,{flexDirection}]}>
@@ -18,7 +18,7 @@ export default function BandProber(props){
                     <Animated.Text style={[css.label,css[label]]} key={useKey("label")}>{label}</Animated.Text>
                 )}           
             </Animated.View>
-        {flexDirection==="row"&&
+        {probed&&
             <Animated.View style={css.row1}>
                 <Animated.View style={[css.row2,styles.row2(y)]}>
                     <SongSection songs={band.populars}/>
@@ -26,7 +26,7 @@ export default function BandProber(props){
                 <Animated.View style={[css.row3,styles.row3(y)]}>
                     <AlbumSection albums={band.albums}/>
                     <TO activeOpacity={0.1}>
-                        <AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={()=>{onClose(()=>{y.setValue(y.from)})}}/>
+                        <AntDesign {...css.closebtn} name="arrowdown" onTouchEnd={onClose}/>
                     </TO>
                 </Animated.View>
             </Animated.View>
@@ -51,6 +51,7 @@ const styles={
         opacity:y.interpolate({
             inputRange:[y.to,y.from],
             outputRange:[1,0],
+            extrapolate:"clamp",
         }),
         transform:[{translateY:y}],
     }),
@@ -58,6 +59,7 @@ const styles={
         opacity:y.interpolate({
             inputRange:[y.to,y.from],
             outputRange:[1,0],
+            extrapolate:"clamp",
         }),
         transform:["X","Y"].flatMap(side=>{
             const translate={},scale={};

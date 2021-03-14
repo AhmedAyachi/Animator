@@ -4,10 +4,9 @@ import {PanResponder} from "react-native";
 
 export const useSwipeUp=(callback)=>{
     const panResponder=useRef(PanResponder.create({
-        onMoveShouldSetPanResponder:()=>true,
-        onPanResponderMove:function(event,touch){
-            const {dy}=touch;
-            (dy<-50)&&callback();
+        onStartShouldSetPanResponder:()=>true,
+        onPanResponderEnd:(event,touch)=>{
+            (touch.dy<-50)&&callback();
         },
     })).current;
 

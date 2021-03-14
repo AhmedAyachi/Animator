@@ -1,21 +1,23 @@
-import {useRef} from "react";
+import {useRef,useEffect,useMemo,useCallback} from "react";
 import{Animated,Easing} from "react-native";
 
 
 export const useSwipeAnimation=(containerHeight,probed)=>{
     const state=useRef({
-        height:new Animated.Value(probed?containerHeight:containerHeight/2),
+        height:new Animated.Value(containerHeight/2),
         duration:850,
     }).current;
-    const animation=Animated.timing(state.height,{
+    const animation=useCallback(Animated.timing(state.height,{
         toValue:probed?containerHeight/2:containerHeight,
         duration:state.duration,
-        easing:Easing.sin,
+        easing:Easing.elastic(0.35),
         useNativeDriver:false,
-    });
-
-    return [state.height,{
-        duration:state.duration,
-        ...animation,
-    }];
+    }),[probed]);
+    return [
+        state.height,
+        {
+            ...animation,
+            duration:state.duration,
+        }
+    ];
 }

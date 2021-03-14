@@ -36,7 +36,7 @@ export default function BandView(props){
                 flexDirection={flexDirection}
                 containerHeight={containerDimensions.height}
                 probed={probed}
-                onClose={(callback)=>{
+                onClose={()=>{
                     if(probed){
                         listRef.current.setNativeProps({
                             scrollEnabled:true,
@@ -44,10 +44,7 @@ export default function BandView(props){
                         LayoutAnimation.linear();
                         setFlexDirection("column");
                         animation.start(({finished})=>{
-                            if(finished){
-                                callback();
-                                setProbed(false);
-                            }
+                            finished&&setProbed(false);
                         });
                     }
                 }}
