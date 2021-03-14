@@ -4,7 +4,7 @@ import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
 import {Route} from "react-router-native";
 import {Header} from "components";
-import * as Animations from "routes";
+import {Animation0} from "routes";
 import {useKey} from "afile";
 
 
@@ -24,4 +24,4 @@ export default function App(){
     );
 }
 
-const routes=Object.values(Animations).reverse();
+//const routes=Object.values(Animations).reverse();
