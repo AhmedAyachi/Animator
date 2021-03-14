@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import {View,Text,LayoutAnimation} from "react-native";
+import {View,LayoutAnimation} from "react-native";
 import css from "./BandView.style";
 import Badge from "./Badge/Badge";
 import BandProber from "./BandProber/BandProber";
@@ -57,7 +57,6 @@ const layoutconfig={
     duration:850,
     update:{
         type:LayoutAnimation.Types.easeIn,
-        //delay:500,
     },
 };
 const styles={

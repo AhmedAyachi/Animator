@@ -8,7 +8,6 @@ const css=StyleSheet.create({
     albumsection:{
         width:"100%",
         overflow:"hidden",
-        //...border(1,"solid","white"),
     },
     title:{
         fontFamily:"squadaone",

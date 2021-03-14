@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,vh} from "css";
+import {rem} from "css";
 import {Colors} from "estate";
 
 
@@ -22,7 +22,6 @@ const css={...StyleSheet.create({
         paddingLeft:"15%",
         justifyContent:"space-between",
         alignItems:"flex-start",
-        //...border(1,"solid","white"),
     },
     row1:{
         width:"100%",

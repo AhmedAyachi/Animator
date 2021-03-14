@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,vw,border} from "css";
+import {rem} from "css";
 import {Colors} from "estate";
 
 

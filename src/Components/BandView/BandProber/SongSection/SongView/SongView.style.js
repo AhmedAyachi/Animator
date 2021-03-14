@@ -10,14 +10,12 @@ const css={...StyleSheet.create({
         marginVertical:1*rem,
         alignSelf:"center",
         overflow:"visible",
-        //...border(1,"solid","white"),
     },
     row0:{
         width:"100%",
         flexDirection:"row",
         justifyContent:"space-around",
         alignItems:"flex-start",
-        //...border(1,"solid","red"),
     },
     row1:{
         width:"100%",
@@ -52,8 +50,6 @@ const css={...StyleSheet.create({
     stopbtn:{
         position:"absolute",
         left:-2.5*rem,
-        //marginRight:1*rem,
-        //padding:3,
     },
 }),...{
     stopbtnicon:{
@@ -64,7 +60,6 @@ const css={...StyleSheet.create({
             width:"100%",
             alignSelf:"center",
             borderRadius:200,
-            //backgroundColor:colors.secondary,
         },
     },
 }};
