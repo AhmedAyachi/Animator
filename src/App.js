@@ -4,7 +4,7 @@ import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
 import {Route} from "react-router-native";
 import {Header} from "components";
-import {Animation0} from "routes";
+import * as Animations from "routes";
 import {useKey} from "afile";
 
 
