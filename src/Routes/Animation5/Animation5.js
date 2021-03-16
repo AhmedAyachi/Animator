@@ -2,7 +2,7 @@ import React,{useRef,useEffect,useState} from "react";
 import {View,Animated,ImageBackground} from "react-native";
 import css from "./Animation5.style";
 import {IlluView} from "components";
-import {alchemist0,hairy0,leodark0,nowel0,privor0,samji0,Toyzy0} from "assets";
+import {perrot0,snake0,cat0,bovid0,eagle0,horse0,owl0} from "assets";
 import {useKey} from "afile";
 
 
@@ -37,6 +37,7 @@ export default function Animation5(){
             }
             <Animated.FlatList
             horizontal pagingEnabled showsHorizontalScrollIndicator={false}
+            disableIntervalMomentum={true}
             onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:true})}
             contentContainerStyle={css.viewslist}
                 keyExtractor={()=>useKey("illuview")}
@@ -48,11 +49,11 @@ export default function Animation5(){
 }
 
 const illuviews=[
-    {title:"Alchemist",image:alchemist0},
-    {title:"Hairy",image:hairy0},
-    {title:"Leodark",image:leodark0},
-    {title:"Nowel",image:nowel0},
-    {title:"Privor",image:privor0},
-    {title:"Samji",image:samji0},
-    {title:"Toyzy",image:Toyzy0},
+    {title:"Parrot",image:perrot0},
+    {title:"Snake",image:snake0},
+    {title:"Cat",image:cat0},
+    {title:"Bovid",image:bovid0},
+    {title:"Eagle",image:eagle0},
+    {title:"Horse",image:horse0},
+    {title:"Owl",image:owl0},
 ];
